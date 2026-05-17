@@ -31,9 +31,29 @@ function shuffle(values) {
   return shuffled;
 }
 
-if (feedbackGrid && feedbackQuotesScript) {
+async function loadFeedbackQuotes() {
+  if (!feedbackGrid) {
+    return;
+  }
+
   try {
-    const rawQuotes = JSON.parse(feedbackQuotesScript.textContent || "[]");
+    let rawQuotes = [];
+    const source = feedbackGrid.dataset.feedbackSource;
+    if (source) {
+      try {
+        const response = await fetch(source, { cache: "no-store" });
+        if (response.ok) {
+          rawQuotes = await response.json();
+        }
+      } catch (error) {
+        console.warn("Unable to load external feedback quotes.", error);
+      }
+    }
+
+    if (!rawQuotes.length && feedbackQuotesScript) {
+      rawQuotes = JSON.parse(feedbackQuotesScript.textContent || "[]");
+    }
+
     const normalizedQuotes = rawQuotes
       .map((entry) => {
         if (typeof entry === "string") {
@@ -63,6 +83,8 @@ if (feedbackGrid && feedbackQuotesScript) {
     console.warn("Unable to rotate feedback quotes.", error);
   }
 }
+
+loadFeedbackQuotes();
 
 const observer = new IntersectionObserver(
   (entries) => {

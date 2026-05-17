@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visuals | Sriram Kalathoor</title>
+    <meta
+      name="description"
+      content="Simulation movies, flow fields, topology maps, spectra, and computational diagnostics."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="index.html">Sriram Kalathoor</a>
+        <div class="nav-links">
+          <a href="index.html">Overview</a>
+          <a href="research.html">Research</a>
+          <a aria-current="page" href="media.html">Visuals</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="about.html">About Me</a>
+          <a href="resume.html">Resume</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Visuals and movies</p>
+        <h1>Seeing the Physics.</h1>
+        <p>
+          Simulation visuals reveal structure that is difficult to see from scalar metrics alone: coherent motion,
+          localized heat release, acoustic-compressive activity, transport barriers, and the geometry of mixing.
+        </p>
+      </section>
+
+      <section class="section media-grid">
+        <article class="media-card large">
+          <div class="case-media two-up">
+            <video src="assets/research/sound-in-a-box-absorbing-wall.mp4" controls muted playsinline></video>
+            <img src="assets/research/sound-in-a-box-high-order-error.png" alt="High-order acoustic wave-equation error over time" />
+          </div>
+          <h2>Sound in an absorptive room</h2>
+          <p>
+            The acoustic field expands from a speaker-like source, reflects from the room boundaries, and weakens near an
+            absorptive wall. The companion error plot shows why high-order schemes are useful for room acoustics: they
+            preserve wave speed and phase more accurately over time.
+          </p>
+        </article>
+
+        <article class="media-card large">
+          <div class="case-media">
+            <video src="assets/research/combustion-heat-release.mp4" controls muted playsinline></video>
+          </div>
+          <h2>Heat-release dynamics in an unstable afterburner</h2>
+          <p>
+            The flame does not simply fluctuate in place. Heat release rolls, stretches, and reorganizes in time, giving
+            a direct view of the unsteady combustion process that can feed acoustic instability.
+          </p>
+        </article>
+
+        <article class="media-card large">
+          <div class="case-media two-up">
+            <img src="assets/research/tml-core-topology.png" alt="Reacting turbulent mixing-layer topology and reaction fields" />
+            <video src="assets/research/tml-temperature-evolution-12b4.mp4" controls muted playsinline></video>
+          </div>
+          <h2>Thermal evolution in a reacting mixing layer</h2>
+          <p>
+            The movie shows how hot and cold fluid regions stretch, fold, and reorganize in time, while the topology map
+            connects that thermal evolution to vortical and reactive structure. Together they show why reacting turbulent
+            mixing cannot be reduced to a single instantaneous field.
+          </p>
+        </article>
+
+        <article class="media-card">
+          <div class="case-media">
+            <img src="assets/research/tml-barycentric-prism.png" alt="Barycentric turbulence anisotropy prism colored by heat release" />
+          </div>
+          <h2>Turbulence-state geometry</h2>
+          <p>
+            The barycentric prism visualizes how local turbulence state, mixture fraction, and heat release occupy a
+            coupled state space rather than varying independently.
+          </p>
+        </article>
+
+        <article class="media-card">
+          <div class="case-media">
+            <img src="assets/research/tml-modal-wavelet-dominance.png" alt="Wavelet dominance atlas for modal interaction terms" />
+          </div>
+          <h2>Scale-local interaction</h2>
+          <p>
+            Transform-space views show which interaction families dominate across position and scale, making multiscale
+            coupling visible as a structured map rather than a single integrated number.
+          </p>
+        </article>
+
+        <article class="media-card">
+          <div class="case-media">
+            <img src="assets/research/tml-lowfreq-phase-map.png" alt="Low-frequency phase-alignment map for heat release and dilatation" />
+          </div>
+          <h2>Low-frequency organization</h2>
+          <p>
+            Phase maps reveal intermittent windows where heat release and kinematic activity organize together at low
+            frequency, exposing collective behavior that is easy to miss in raw time traces.
+          </p>
+        </article>
+
+        <article class="media-card">
+          <div class="case-media">
+            <img src="assets/research/bluff-velocity.jpg" alt="Velocity field in a bluff-body combustor" />
+          </div>
+          <h2>Bluff-body velocity field</h2>
+          <p>
+            The wake behind the bluff body creates the residence-time and recirculation environment that anchors the
+            flame. Those same flow features influence where incomplete combustion products can persist downstream.
+          </p>
+        </article>
+
+        <article class="media-card">
+          <div class="case-media">
+            <img src="assets/research/combustion-instability-map.png" alt="Combustion instability map" />
+          </div>
+          <h2>Instability operating map</h2>
+          <p>
+            The map shows where operating conditions bring heat-release oscillations and acoustic response into a
+            reinforcing relationship, which is the practical danger zone for combustion instability.
+          </p>
+        </article>
+
+        <article class="media-card">
+          <div class="case-media">
+            <video src="assets/research/four-point-shock.mp4" controls muted playsinline></video>
+          </div>
+          <h2>Shock-induced vorticity</h2>
+          <p>
+            As the shocks collide and reflect, the pressure waves leave behind rotational structure. The movie makes the
+            wave-vorticity exchange visible without reducing it to a single scalar trace.
+          </p>
+        </article>
+
+        <article class="media-card">
+          <div class="case-media">
+            <img src="assets/research/jicf-qcriterion.png" alt="Q-criterion visualization for jet-in-crossflow combustion" />
+          </div>
+          <h2>Jet-in-crossflow structure</h2>
+          <p>
+            The jet bends, rolls up, and mixes with the crossflow through coherent vortical structures. The visual links
+            injection geometry to mixing, flame placement, and thermal loading.
+          </p>
+        </article>
+
+        <article class="media-card">
+          <div class="case-media">
+            <video src="assets/research/separating-reattaching-flow.mp4" controls muted playsinline></video>
+          </div>
+          <h2>Separated-flow wall structure</h2>
+          <p>
+            Separation creates a large unsteady region above the wall, while the near-wall vorticity shows how that
+            motion imprints itself on the surface before reattachment.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Simulation visuals · combustion · shocks · separated flows.</span>
+      <span>Thermofluids, transport, acoustics, and engineering flow structure.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

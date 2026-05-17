@@ -1018,18 +1018,24 @@ address {
 
 .contact-form-card form {
   display: grid;
-  gap: 14px;
-  margin-top: 22px;
+  gap: 18px;
+  margin-top: 28px;
 }
 
 .contact-form-card label {
   color: rgba(255, 247, 231, 0.88);
   display: grid;
   font-weight: 850;
-  gap: 7px;
+  gap: 10px;
 }
 
-.contact-form-card label span {
+.field-label {
+  align-items: baseline;
+  display: flex;
+  gap: 8px;
+}
+
+.field-label span {
   color: rgba(255, 247, 231, 0.58);
   font-size: 0.86rem;
   font-weight: 700;
@@ -1039,20 +1045,26 @@ address {
 .contact-form-card textarea {
   background: rgba(255, 251, 240, 0.95);
   border: 1px solid rgba(255, 247, 231, 0.22);
-  border-radius: 16px;
+  border-radius: 18px;
   color: var(--ink);
   font: inherit;
-  padding: 13px 14px;
+  min-height: 54px;
+  padding: 16px 17px;
   width: 100%;
 }
 
 .contact-form-card textarea {
+  line-height: 1.55;
+  min-height: 260px;
   resize: vertical;
 }
 
 .contact-form-card .button {
   cursor: pointer;
   justify-content: center;
+  margin-top: 4px;
+  min-height: 50px;
+  padding-inline: 22px;
   width: fit-content;
 }
 

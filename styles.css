@@ -1164,21 +1164,31 @@ address {
 
 .quote-grid {
   display: grid;
-  gap: 16px;
+  gap: 18px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .quote-grid blockquote {
-  background: var(--panel-strong);
+  background:
+    linear-gradient(180deg, var(--panel-strong), rgba(255, 251, 240, 0.72)),
+    linear-gradient(90deg, rgba(184, 95, 42, 0.1), transparent);
   border: 1px solid var(--line);
-  border-left: 5px solid var(--teal);
   border-radius: var(--radius-lg);
   color: var(--ink-soft);
   font-family: "Iowan Old Style", "Palatino", "Georgia", serif;
   font-size: 1.18rem;
   line-height: 1.5;
   margin: 0;
+  min-height: 220px;
   padding: 22px;
+}
+
+.quote-grid blockquote:nth-child(odd) {
+  background:
+    linear-gradient(160deg, rgba(16, 57, 61, 0.94), rgba(20, 18, 15, 0.9)),
+    radial-gradient(circle at 20% 0%, rgba(214, 169, 53, 0.34), transparent 24rem);
+  border-color: rgba(255, 247, 231, 0.28);
+  color: rgba(255, 247, 231, 0.86);
 }
 
 .capability {

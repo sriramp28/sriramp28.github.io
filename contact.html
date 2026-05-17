@@ -8,7 +8,7 @@
       name="description"
       content="Contact Sriram Kalathoor by email, LinkedIn, office address, or a short message form."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260517-contact" />
   </head>
   <body>
     <header class="site-header">
@@ -72,8 +72,8 @@
           <p class="eyebrow">Message form</p>
           <h2>Send a note.</h2>
           <p>
-            The form sends your message to my email. Email is optional if you do not need a response, but including it
-            makes it possible for me to reply.
+            The form sends your message to my email. Email is required so I can trace and respond to notes reliably;
+            phone number is optional.
           </p>
           <form action="https://formsubmit.co/sriram2@gatech.edu" method="POST">
             <input type="hidden" name="_subject" value="Message from Sriram Kalathoor website" />
@@ -81,24 +81,24 @@
             <input type="hidden" name="_captcha" value="false" />
             <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" />
 
-            <label>
+            <label class="form-field">
               <span class="field-label">Name:</span>
-              <input type="text" name="name" autocomplete="name" required />
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
             </label>
 
-            <label>
+            <label class="form-field">
               <span class="field-label">Email:</span>
-              <input type="email" name="email" autocomplete="email" />
+              <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required />
             </label>
 
-            <label>
+            <label class="form-field">
               <span class="field-label">Phone number: <span>optional</span></span>
-              <input type="tel" name="phone" autocomplete="tel" />
+              <input type="tel" name="phone" autocomplete="tel" placeholder="Optional" />
             </label>
 
-            <label>
+            <label class="form-field message-field">
               <span class="field-label">Message:</span>
-              <textarea name="message" rows="12" required></textarea>
+              <textarea name="message" rows="14" placeholder="Write your message here..." required></textarea>
             </label>
 
             <button class="button primary" type="submit">Send Message</button>

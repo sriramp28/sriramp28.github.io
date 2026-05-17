@@ -33,10 +33,31 @@ function shuffle(values) {
 
 if (feedbackGrid && feedbackQuotesScript) {
   try {
-    const quotes = JSON.parse(feedbackQuotesScript.textContent || "[]");
-    const selectedQuotes = shuffle(quotes).slice(0, 6);
+    const rawQuotes = JSON.parse(feedbackQuotesScript.textContent || "[]");
+    const normalizedQuotes = rawQuotes
+      .map((entry) => {
+        if (typeof entry === "string") {
+          return { category: "general", quote: entry.trim() };
+        }
+        return {
+          category: (entry.category || "general").trim(),
+          quote: (entry.quote || "").trim(),
+        };
+      })
+      .filter((entry) => entry.quote);
+    const uniqueQuotes = [
+      ...new Map(normalizedQuotes.map((entry) => [entry.quote, entry])).values(),
+    ];
+    const courseQuotes = uniqueQuotes.filter((entry) => entry.category === "course");
+    const instructorQuotes = uniqueQuotes.filter((entry) => entry.category === "instructor");
+    const balancedQuotes = [
+      ...shuffle(courseQuotes).slice(0, 3),
+      ...shuffle(instructorQuotes).slice(0, 3),
+    ];
+    const fallbackQuotes = shuffle(uniqueQuotes).slice(0, 6);
+    const selectedQuotes = balancedQuotes.length === 6 ? shuffle(balancedQuotes) : fallbackQuotes;
     feedbackGrid.innerHTML = selectedQuotes
-      .map((quote) => `<blockquote>“${quote}”</blockquote>`)
+      .map((entry) => `<blockquote>“${entry.quote}”</blockquote>`)
       .join("");
   } catch (error) {
     console.warn("Unable to rotate feedback quotes.", error);

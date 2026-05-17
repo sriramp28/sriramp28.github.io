@@ -961,6 +961,105 @@ h1 {
   padding: 9px 13px;
 }
 
+.contact-layout {
+  align-items: start;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
+}
+
+.contact-methods {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-link-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.contact-link-list a {
+  background: rgba(255, 251, 240, 0.62);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--deep);
+  font-weight: 850;
+  padding: 10px 14px;
+  width: fit-content;
+}
+
+address {
+  color: var(--ink-soft);
+  font-style: normal;
+  line-height: 1.65;
+  margin-top: 18px;
+}
+
+.contact-form-card {
+  background:
+    linear-gradient(160deg, rgba(16, 57, 61, 0.94), rgba(20, 18, 15, 0.9)),
+    radial-gradient(circle at 15% 0%, rgba(214, 169, 53, 0.34), transparent 24rem);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  color: #fff7e7;
+  padding: 30px;
+}
+
+.contact-form-card .eyebrow,
+.contact-form-card p {
+  color: rgba(255, 247, 231, 0.76);
+}
+
+.contact-form-card h2 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  letter-spacing: -0.045em;
+}
+
+.contact-form-card form {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.contact-form-card label {
+  color: rgba(255, 247, 231, 0.88);
+  display: grid;
+  font-weight: 850;
+  gap: 7px;
+}
+
+.contact-form-card label span {
+  color: rgba(255, 247, 231, 0.58);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+  background: rgba(255, 251, 240, 0.95);
+  border: 1px solid rgba(255, 247, 231, 0.22);
+  border-radius: 16px;
+  color: var(--ink);
+  font: inherit;
+  padding: 13px 14px;
+  width: 100%;
+}
+
+.contact-form-card textarea {
+  resize: vertical;
+}
+
+.contact-form-card .button {
+  cursor: pointer;
+  justify-content: center;
+  width: fit-content;
+}
+
+.form-honey {
+  display: none;
+}
+
 .cv-section {
   padding: 34px 0;
 }
@@ -1131,6 +1230,7 @@ h1 {
   .capability-panel,
   .split-section,
   .teaching-demo-grid,
+  .contact-layout,
   .media-grid,
   .resume-grid,
   .quote-grid {
@@ -1169,6 +1269,7 @@ h1 {
   .metric-grid,
   .split-section,
   .teaching-demo-grid,
+  .contact-layout,
   .media-grid,
   .resume-grid,
   .quote-grid {

@@ -1087,6 +1087,29 @@ address {
   width: fit-content;
 }
 
+.form-note {
+  color: rgba(255, 247, 231, 0.72);
+  font-size: 0.94rem;
+  margin: 0;
+}
+
+.form-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.light-button {
+  background: rgba(255, 247, 231, 0.12);
+  border-color: rgba(255, 247, 231, 0.32);
+  color: #fff7e7;
+}
+
+.light-button:hover {
+  background: rgba(255, 247, 231, 0.2);
+}
+
 .form-honey {
   display: none;
 }

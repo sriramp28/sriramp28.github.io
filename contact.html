@@ -8,7 +8,7 @@
       name="description"
       content="Contact Sriram Kalathoor by email, LinkedIn, office address, or a short message form."
     />
-    <link rel="stylesheet" href="styles.css?v=20260517-feedback" />
+    <link rel="stylesheet" href="styles.css?v=20260520-opportunities" />
   </head>
   <body>
     <header class="site-header">
@@ -31,9 +31,9 @@
         <p class="eyebrow">Contact</p>
         <h1>Let’s Connect.</h1>
         <p>
-          I am always open to conversations around thermofluids, simulation, acoustics, heat transfer, combustion,
-          numerical methods, teaching, and engineering applications where careful computation can clarify a physical
-          question.
+          I am open to conversations around simulation-driven design, finite-element and multiphysics analysis,
+          thermofluids, acoustics, heat transfer, combustion, numerical methods, teaching, and engineering applications
+          where careful computation can clarify a physical question or support a practical design decision.
         </p>
       </section>
 
@@ -72,13 +72,16 @@
           <p class="eyebrow">Message form</p>
           <h2>Send a note.</h2>
           <p>
-            The form sends your message to my email. Email is required so I can trace and respond to notes reliably;
-            phone number is optional.
+            This static-site form opens a prepared email draft in your email client. Email is required so I can trace and
+            respond to notes reliably; phone number is optional.
           </p>
-          <form action="https://formsubmit.co/sriram2@gatech.edu" method="POST">
-            <input type="hidden" name="_subject" value="Message from Sriram Kalathoor website" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
+          <form
+            action="mailto:sriram2@gatech.edu?subject=Message%20from%20Sriram%20Kalathoor%20website"
+            method="post"
+            enctype="text/plain"
+            data-mailto-form
+            data-recipient="sriram2@gatech.edu"
+          >
             <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" />
 
             <label class="form-field">
@@ -101,7 +104,13 @@
               <textarea name="message" rows="14" placeholder="Write your message here..." required></textarea>
             </label>
 
-            <button class="button primary" type="submit">Send Message</button>
+            <p class="form-note" data-form-status>
+              Submitting will open your email client with the message filled in.
+            </p>
+            <div class="form-actions">
+              <button class="button primary" type="submit">Open Email Draft</button>
+              <a class="button secondary light-button" href="mailto:sriram2@gatech.edu">Email Directly</a>
+            </div>
           </form>
         </article>
       </section>
@@ -112,6 +121,6 @@
       <span>Email · LinkedIn · office address · message form.</span>
     </footer>
 
-    <script src="script.js?v=20260517-feedback"></script>
+    <script src="script.js?v=20260520-opportunities"></script>
   </body>
 </html>

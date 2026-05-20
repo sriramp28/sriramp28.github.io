@@ -5,6 +5,7 @@ const revealTargets = [
 ];
 const feedbackGrid = document.querySelector("[data-feedback-grid]");
 const feedbackQuotesScript = document.querySelector("#feedback-quotes");
+const mailtoForms = [...document.querySelectorAll("[data-mailto-form]")];
 
 function setFilter(filter) {
   for (const button of filterButtons) {
@@ -85,6 +86,43 @@ async function loadFeedbackQuotes() {
 }
 
 loadFeedbackQuotes();
+
+function fieldValue(form, name) {
+  return (form.elements[name]?.value || "").trim();
+}
+
+for (const form of mailtoForms) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const status = form.querySelector("[data-form-status]");
+    if (fieldValue(form, "_honey")) {
+      form.reset();
+      return;
+    }
+    if (!form.reportValidity()) {
+      return;
+    }
+
+    const recipient = form.dataset.recipient || "sriram2@gatech.edu";
+    const name = fieldValue(form, "name");
+    const email = fieldValue(form, "email");
+    const phone = fieldValue(form, "phone") || "Not provided";
+    const message = fieldValue(form, "message");
+    const subject = `Message from ${name} via portfolio website`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      "",
+      message,
+    ].join("\n");
+
+    if (status) {
+      status.textContent = "Opening your email client with a prepared draft.";
+    }
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+}
 
 const observer = new IntersectionObserver(
   (entries) => {

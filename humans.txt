@@ -1,0 +1,8 @@
+Sriram Kalathoor
+Computational simulation engineer, thermofluids researcher, finite-element and multiphysics analyst, and instructor.
+
+Website: https://sriramp28.github.io/
+LinkedIn: https://www.linkedin.com/in/kalathoor
+
+Focus areas:
+Finite-element analysis, design simulation, thermofluids, heat transfer, acoustics, reacting flows, multiphysics modeling, high-performance computing, and engineering education.

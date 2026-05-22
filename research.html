@@ -6,17 +6,17 @@
     <title>Research | Sriram Kalathoor</title>
     <meta
       name="description"
-      content="Research by Sriram Kalathoor spanning computational modeling, finite-volume and finite-element reasoning, thermofluids, acoustics, topology, filtering, reacting-flow simulation, and multiphysics diagnostics."
+      content="Research by Sriram Kalathoor spanning propulsion design simulation, coupled CFD/FEA, computational modeling, thermofluids, acoustics, topology, filtering, reacting-flow simulation, and multiphysics diagnostics."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sriramp28.github.io/research.html" />
     <meta property="og:title" content="Research | Sriram Kalathoor" />
-    <meta property="og:description" content="Computational modeling, thermofluids, acoustics, topology, filtering, reacting-flow simulation, design-oriented simulation, and multiphysics diagnostics." />
+    <meta property="og:description" content="Propulsion design simulation, coupled CFD/FEA, computational modeling, thermofluids, acoustics, topology, filtering, reacting-flow simulation, and multiphysics diagnostics." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sriramp28.github.io/research.html" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Research | Sriram Kalathoor" />
-    <meta name="twitter:description" content="Computational modeling, thermofluids, acoustics, topology, reacting-flow simulation, and multiphysics diagnostics." />
+    <meta name="twitter:description" content="Propulsion design simulation, coupled CFD/FEA, thermofluids, acoustics, reacting-flow simulation, and multiphysics diagnostics." />
     <link rel="stylesheet" href="styles.css?v=20260520-opportunities" />
   </head>
   <body>
@@ -79,6 +79,21 @@
         </div>
 
         <div class="mixed-research-grid">
+          <article class="paper-card feature" style="order: 0" data-tags="design multiphysics propulsion heat acoustics numerical">
+            <div class="paper-tag">Applied propulsion design</div>
+            <h3>Simulation-guided design of engine configurations under emissions, noise, and stability constraints</h3>
+            <p>
+              Applied propulsion work has connected injector design, droplet-cloud transport, evaporation and heat
+              transfer, wall cooling, air-bleed profiles, combustor acoustics, emissions trends, and engine-geometry
+              changes. These studies combine high-fidelity flow simulation with finite-element and coupled-field
+              interpretation of structural response, so design changes can be judged against thermal loading, acoustic
+              behavior, structural integrity, manufacturability, and regulatory constraints.
+            </p>
+            <figure class="visual-slot image-slot">
+              <img src="assets/research/droplet-flowfield.png" alt="Flow field in a supersonic engine-relevant configuration" />
+            </figure>
+          </article>
+
           <article class="case-card" style="order: 2" data-tags="combustion emissions propulsion fluids transport design">
             <div class="case-media two-up">
               <img src="assets/research/bluff-velocity.jpg" alt="Velocity field in a bluff-body combustor" />
@@ -89,7 +104,9 @@
             <p>
               Practical combustors must balance stability, mixing, temperature rise, and emissions. These simulations
               connect the velocity field, downstream carbon-monoxide distribution, and flow-variable correlations to
-              identify which regions and mechanisms most strongly influence pollutant formation.
+              identify which regions and mechanisms most strongly influence pollutant formation. The same analysis
+              framework supports combustor geometry and flow-rate trade studies where emissions reduction has to be
+              balanced against thermal loading and operability.
             </p>
             <figure class="inline-figure">
               <img src="assets/research/bluff-correlations.png" alt="Correlation map between flow variables and emissions" />
@@ -106,6 +123,7 @@
               Combustion instability emerges when unsteady heat release and acoustic modes reinforce each other. The
               operating map links flow rate, heat-release fluctuation strength, and dominant acoustic frequency to
               identify feedback-prone regions, while the pressure spectrum highlights the loudest unstable modes.
+              This work connects noise and stability requirements to combustor flow and structural design decisions.
             </p>
             <div class="case-media two-up">
               <img src="assets/research/combustion-pressure-lockon.png" alt="Dominant pressure spectrum modes in an unstable afterburner" />
@@ -124,6 +142,8 @@
               Liquid fuel placement and carrier-flow structure control evaporation, mixing, emissions, and operability.
               The visualizations show droplet distribution and the surrounding flow field in a supersonic engine-relevant
               configuration, highlighting how inlet nonuniformity can propagate into downstream combustion behavior.
+              The design context includes injector assessment, droplet-cloud evolution, evaporation and heat-transfer
+              rates, and downstream thermal-load implications.
             </p>
           </article>
 
@@ -195,7 +215,9 @@
               Across my research, the technical workflow combines governing-equation modeling, mesh-based
               discretization, numerical reasoning shared across finite-volume and finite-element formulations, parallel
               execution, field reconstruction, and quantitative postprocessing for coupled transport, acoustic, and
-              reacting-flow systems. The emphasis is on building simulations that can be interrogated after the fact,
+              reacting-flow systems. It also includes practical geometry preparation, meshing, design sweeps, and
+              interpretation across CFD, FEA, and coupled multiphysics tools. The emphasis is on building simulations
+              that can be interrogated after the fact,
               so that fields, derived quantities, event sets, spectra, and reduced diagnostics remain traceable back to
               the underlying conservation laws.
             </p>

@@ -6,17 +6,17 @@
     <title>Research | Sriram Kalathoor</title>
     <meta
       name="description"
-      content="Research by Sriram Kalathoor spanning propulsion design simulation, coupled CFD/FEA, computational modeling, thermofluids, acoustics, topology, filtering, reacting-flow simulation, and multiphysics diagnostics."
+      content="Research by Sriram Kalathoor spanning propulsion design simulation, coupled CFD/FEA, computational modeling, thermofluids, ocean mixing, acoustics, topology, filtering, reacting-flow simulation, and multiphysics diagnostics."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sriramp28.github.io/research.html" />
     <meta property="og:title" content="Research | Sriram Kalathoor" />
-    <meta property="og:description" content="Propulsion design simulation, coupled CFD/FEA, computational modeling, thermofluids, acoustics, topology, filtering, reacting-flow simulation, and multiphysics diagnostics." />
+    <meta property="og:description" content="Propulsion design simulation, coupled CFD/FEA, computational modeling, thermofluids, ocean mixing, acoustics, topology, filtering, reacting-flow simulation, and multiphysics diagnostics." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sriramp28.github.io/research.html" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Research | Sriram Kalathoor" />
-    <meta name="twitter:description" content="Propulsion design simulation, coupled CFD/FEA, thermofluids, acoustics, reacting-flow simulation, and multiphysics diagnostics." />
+    <meta name="twitter:description" content="Propulsion design simulation, coupled CFD/FEA, thermofluids, ocean mixing, acoustics, reacting-flow simulation, and multiphysics diagnostics." />
     <link rel="stylesheet" href="styles.css?v=20260520-opportunities" />
   </head>
   <body>
@@ -49,6 +49,7 @@
       <section class="section">
         <div class="filters" aria-label="Research filters">
           <button class="filter-button active" data-filter="all">All</button>
+          <button class="filter-button" data-filter="ocean">Ocean mixing</button>
           <button class="filter-button" data-filter="heat">Heat transfer</button>
           <button class="filter-button" data-filter="combustion">Combustion</button>
           <button class="filter-button" data-filter="emissions">Emissions</button>
@@ -79,6 +80,24 @@
         </div>
 
         <div class="mixed-research-grid">
+          <article class="case-card accent-card" style="order: -2" data-tags="ocean fluids transport heat numerical turbulence multiphysics">
+            <div class="case-media two-up">
+              <video src="assets/research/swf-salinity-y-mid.mp4" controls muted playsinline></video>
+              <video src="assets/research/swf-temperature-y-mid.mp4" controls muted playsinline></video>
+            </div>
+            <div class="paper-tag">Ocean mixing and double diffusion</div>
+            <h3>Salt-water fingering in a finite-depth Boussinesq layer</h3>
+            <p>
+              Current salt-fingering work examines how warm, salty fluid above colder, fresher fluid develops
+              double-diffusive instability when heat diffuses more rapidly than salt. The simulation resolves the
+              onset and slow nonlinear growth of salinity, temperature, and vertical-velocity structure in a
+              three-dimensional finite-depth Boussinesq setting, with an emphasis on flux pathways, interface
+              deformation, and the transition from seeded perturbations toward organised finger-like transport.
+            </p>
+            <figure class="inline-figure">
+              <img src="assets/research/swf-vertical-velocity-z-mid.png" alt="Midplane vertical-velocity heatmap from a salt-water fingering simulation" />
+            </figure>
+          </article>
           <article class="paper-card feature" style="order: 0" data-tags="design multiphysics propulsion heat acoustics numerical">
             <div class="paper-tag">Applied propulsion design</div>
             <h3>Simulation-guided design of engine configurations under emissions, noise, and stability constraints</h3>

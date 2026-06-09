@@ -576,6 +576,10 @@ h1 {
   gap: 10px;
 }
 
+.media-card .case-media + .case-media {
+  margin-top: 10px;
+}
+
 .case-media.two-up {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }

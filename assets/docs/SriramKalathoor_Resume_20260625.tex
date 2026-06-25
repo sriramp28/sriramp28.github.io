@@ -1,0 +1,505 @@
+%-------------------------
+% Resume in Latex
+% Author : Matty
+% Based on: https://github.com/jakegut/resume (which was itself based on https://github.com/sb2nov/resume)
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage{datetime2}
+% \renewcommand{\dateseparator}{--}
+\usepackage{latexsym}
+\usepackage[letterpaper,left=0.5in,right=0.5in,top=0.22in,bottom=0.28in,includefoot]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+%\usepackage[hidelinks]{hyperref}
+\definecolor{darkmidnightblue}{rgb}{0.0, 0.2, 0.4}
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+%\hypersetup{colorlinks,breaklinks,urlcolor=darkgray,linkcolor=gray}
+\hypersetup{colorlinks,breaklinks,urlcolor=darkmidnightblue,linkcolor=darkmidnightblue}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\newcommand{\amp}{\emph{\&} }
+\input{glyphtounicode}
+
+% -------------------- FONT OPTIONS --------------------
+% sans-serif
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% serif
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Page geometry is handled by the geometry package above.
+% Keep a real top margin so continuation pages do not start at the page edge.
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+% Avoid negative pre-section space: it can pull headings/content too close to
+% the physical page edge after automatic page breaks.
+\titleformat{\section}{
+  \scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{7pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
+
+% Subsection formatting
+\titleformat{\subsection}{
+  \scshape\raggedright\large
+}{\hspace{-.15in}}{0em}{}[\color{black}]
+\titlespacing*{\subsection}{0pt}{5pt plus 2pt minus 1pt}{3pt plus 1pt minus 1pt}
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% -------------------- CUSTOM COMMANDS --------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{2pt}}
+  }
+}
+
+% A wrapping, page-break-friendly two-column resume line.
+% Unlike tabular*/minipage-based resume templates, this keeps the long text
+% in ordinary paragraph mode, so TeX can wrap it naturally and page breaks
+% can occur between list items without manual hacks.
+\newlength{\resumeDateWidth}
+\setlength{\resumeDateWidth}{0.5in}
+
+\newlength{\resumeDateGap}
+\setlength{\resumeDateGap}{0.12in}
+
+\newcommand{\resumeLineWithDate}[2]{%
+  \par\noindent
+  \begingroup
+    \rightskip=\dimexpr\resumeDateWidth+\resumeDateGap\relax
+    \parfillskip=-\rightskip
+    #1%
+    \if\relax\detokenize{#2}\relax
+    \else
+      \hfill\makebox[\dimexpr\resumeDateWidth+\resumeDateGap\relax][r]{#2}%
+    \fi
+    \par
+  \endgroup
+}
+
+\newcommand{\resumeWrappedLine}[1]{%
+  \par\noindent
+  \begingroup
+    \rightskip=\dimexpr\resumeDateWidth+\resumeDateGap\relax
+    #1\par
+  \endgroup
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{1pt}\item
+  \begingroup
+    \setlength{\parindent}{0pt}%
+    \setlength{\parskip}{0pt}%
+    \small
+    \resumeLineWithDate{{\normalsize\textbf{#1}}}{#2}%
+    \vspace{2pt}%
+    \resumeWrappedLine{{\emph{#3}}}%
+    \if\relax\detokenize{#4}\relax
+    \else
+      \resumeLineWithDate{}{#4}%
+    \fi
+  \endgroup
+  \vspace{1pt}%
+}
+
+\newcommand{\resumeSubSubheading}[2]{%
+  \vspace{1pt}\item
+  \begingroup
+    \setlength{\parindent}{0pt}%
+    \small
+    \resumeLineWithDate{{\emph{#1}}}{#2}%
+  \endgroup
+  \vspace{2pt}%
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+  \vspace{1pt}\item
+  \begingroup
+    \setlength{\parindent}{0pt}%
+    \small
+    \resumeLineWithDate{#1}{#2}%
+  \endgroup
+  \vspace{2pt}%
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\setlength{\footskip}{4.08003pt}
+
+% -------------------- START OF DOCUMENT --------------------
+\begin{document}
+
+% -------------------- HEADING--------------------
+\begin{flushright}
+  \vspace{-7pt}
+  % \color{RoyalBlue}
+  \color{darkmidnightblue}
+  \item
+  Last Updated on \Today%Jan 28$^{th}$, 2024
+\end{flushright}
+
+\vspace{-15pt}
+
+\begin{center}
+    \textbf{\Huge \scshape Sriram Kalathoor} \\ \vspace{8pt}
+    \small 
+     \faIcon{home}
+     \href{https://maps.app.goo.gl/sqvkXi8YC9A5VBbSA}{1163 W Peachtree St NE, Apt 2112, Atlanta, GA 30309} $  $
+    \faIcon{phone}
+    \href{tel:+14704246777}{+1 (470) 424 6777}\\\medskip
+    % {\underline{mattydoe.com}} $  $
+    \faIcon{linkedin}
+    \href{https://linkedin.com/in/kalathoor}{\underline{linkedin.com/in/kalathoor}} $  $
+    \faGithubSquare $  $
+    \href{https://sriramp28.github.io}{\underline{sriramp28.github.io}}
+    \faIcon{envelope}$ $
+    \href{mailto:sriram2@gatech.edu}
+    {\underline{sriram2@gatech.edu}} $  $
+    \faIcon{envelope}$ $
+    \href{mailto:sriramp28@gmail.com}
+    {\underline{sriramp28@gmail.com}}
+\end{center}
+
+% -------------------- EDUCATION --------------------
+\section{Education}
+\vspace{9pt}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+    {Georgia Institute of Technology}{July 2026}
+    {PhD. Aerospace Engineering; Minor in Applied Mathematics; Minor in Higher Education\\
+    Thesis: Large-to-small scale dynamics, modeling and simulation of flow, reaction, and thermal behavior.\\
+    Advisor: Prof. J. C. Oefelein}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Georgia Institute of Technology}{July 2022}
+    {M.S. Mathematics; Specialization in Analysis, Geometry \& Topology, and Differential Equations}{}
+    \vspace{3pt} 
+    
+    \resumeSubheading
+    {Georgia Institute of Technology}{May 2022}
+    {M.S. Mechanical Engineering; Specialization in Thermo-fluids; Minor in Physics}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Indian Institute of Technology, Madras}{May 2017}
+    {M.S. Aerospace Engineering\\
+    Thesis: LES of screech in an afterburner\\
+    Advisor: Prof. S. R. Chakravarthy}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {SRM University}{May 2013}
+    {B.S. Mechanical Engineering\\
+    Thesis: Simulations of particle-laden flows with applications to fluidization}{}
+    \vspace{3pt} 
+
+    % \vspace{-10pt}
+
+  \resumeSubHeadingListEnd
+
+\section{Research Experience}
+~\\
+\emph{Expertise in mathematical modeling, algorithm development, simulation and assessment of broad classes of engineering problems under various applied scenarios}~\\
+
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+    {High Performance Computing Lab, Georgia Tech}{2020-}
+    {Research Assistant; Design, modeling and simulation of reacting flows. \begin{itemize}
+        \item Designed and analyzed a fuel injector for a supersonic commercial aviation jet engine, including a study of droplet cloud behavior, evaporation and heat transfer rates
+        \item Assessed wall cooling mechanisms and air-bleeding profiles to ensure operational integrity of a commercial supersonic jet engine
+        \item Evaluated flow and emissions profiles, and optimized flow rates as well as engine geometry to minimize emissions and thermal loads
+        \item Performed high-fidelity CFD simulations of turbulent reacting flow% coupled with FEA analysis of the engine structure
+    \end{itemize}}{}
+    \vspace{3pt} 
+    
+    \resumeSubheading
+    {Ben T Zinn Combustion Lab, Georgia Tech}{2019-20}
+    {Research Assistant; Theoretical analysis of combustion noise,
+    \begin{itemize}
+        \item Performed theoretical and numerical analysis on flame-turbulence interaction
+        \item Used CFD and FEA to assess combustion noise in a commercial jet engine
+        \item Optimized combustor flow and structural design to meet FAA regulatory norms on engine noise
+    \end{itemize}}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Computational Combustion Lab, Georgia Tech}{2017-19}
+    {Research Assistant; Simulations of complex flows
+    \begin{itemize}
+        \item Used simulations to evaluate and optimize ignition in high-pressure combustion engines
+        \item Performed coupled CFD/FEA simulations to analyze wall-flame interaction in a jet-in-cross-flow
+        \item Developed and implemented a two-level-set model to capture pressure and stress profiles in model submarines
+        \item Assessed hypersonic re-entry flow behavior using magnetohydodynamic turbulence and coupled structural FEA
+    \end{itemize}}{}
+    \vspace{3pt} 
+\clearpage
+~\vspace{3pt} 
+% \newgeometry{
+%     left=0.5in,
+%     right=0.5in,
+%     top=0.78in,
+%     bottom=0.55in
+% }
+    \resumeSubheading
+    {Rarefied Gas Dynamics Lab, IIT Madras}{2013-17}
+    {Research Associate; Simulations of acoustics
+    \begin{itemize}
+        \item Developed and implemented a multi-scale model for capturing screech (high-frequency instability) in a proprietary afterburner, including a coupled acoustic-structural analysis
+        \item Used COMSOL to evaluate duct acoustics of upstream engine plumbing and analyze its effect on fuel/air mixing, combustion efficiency and structural integrity
+    \end{itemize}}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Ben T Zinn Combustion Lab, Georgia Tech}{2012-13}
+    {Undergraduate Research Assistant; Numerical study of the hydrodynamics of a non-reacting jet-in-crossflow}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Thermodynamics \emph{\&} Combustion Engineering Lab, IIT Madras}{2010-12}
+    {Undergraduate Research Assistant; Experimental \& numerical study of droplet evaporation in isotropic turbulence$\!\!\!$}{}
+    \vspace{3pt} 
+
+    % \vspace{-10pt}
+
+  \resumeSubHeadingListEnd
+
+\section{Skills and Interests}
+\vspace{3pt}
+\begin{itemize}
+    % \item Scientific: Fluid Mechanics, Thermodynamics, Turbulence, Acoustics, FEA \amp CFD
+    % \item Math/Programming: Math. / Stat. / Numerical Analysis; Fortran, C/C++, Python, Matlab, R, \LaTeX
+    \item Software: ANSYS, COMSOL, SolidWorks, PTC Creo, AutoCAD, Pointwise, ICEMCFD
+    \item Fabrication \amp machining: Lathe (CNC), drilling , milling, welding, 3D printing, metrology
+\end{itemize}
+
+\section{Teaching Experience}
+~\\
+\emph{Expertise in teaching a range of introductory to advanced courses on thermo-fluid sciences and math methods}~\\
+
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+    {Instructor of Record, Aerospace Engineering, Georgia Tech}{2020-26}
+    {Graduate student lecturer in the Aerospace Engineering undergraduate program for\begin{itemize}
+        \item AE 3030 Aerodynamics: Spring 2024, 2025 2026
+        \item AE 4040 CFD \amp FEA: Fall 2023, 2024, 2025; (Fall 2019 Co-Instructor)
+        \item COE 2001 Statics: Summer 2022 (Co-Instructor)
+        \item AE 4803 Accident Causation \amp System Safety: Fall 2020 (Co-Instructor)
+    \end{itemize}
+    Designed courses, exams, homework assignments, projects, etc., delivered lectures and mentored large classes (typically 75-100 students)}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Guest Instructor, Mechanical Engineering, Georgia Tech}{2022-23}
+    {\begin{itemize}
+        \item ME 2016 Computing Techniques: Fall 2022
+        \item ME 3340 Fluid Mechanics: Spring 2023
+        \item AE 6042 Introduction to CFD: Spring 2026, Spring 2026
+    \end{itemize}}{}
+    \vspace{3pt} 
+    
+    % \resumeSubheading
+    % {Co-instructor, Aerospace Engineering, Georgia Tech}{2023}
+    % {Co-instructor for AE 4040 (Computational Fluid Dynamics, Fall 2023) with Prof. Joseph Oefelein}{}
+    % \vspace{3pt} 
+
+    % \resumeSubheading
+    % {Graduate Teaching Assistant, Aerospace Engineering, Georgia Tech}{}
+    % {Grad. TA for AE 4040 (Computational Fluid Dynamics, Fall 2019), AE 3030 (Aerodynamics, Spring 2020), AE 4803 (Accident Causation \& System Safety, Fall 2020), and COE 2001 (Statics, Summer 2023)}{}
+     % \vspace{-4pt} 
+
+    % \resumeSubheading
+    % {Graduate Co-Instructor Assistant, Aerospace Engineering, Georgia Tech}{}
+    % {Grad. TA for AE 4040 (Computational Fluid Dynamics, Fall 2019), AE 3030 (Aerodynamics, Spring 2020), AE 4803 (Accident Causation \& System Safety, Fall 2020), and COE 2001 (Statics, Summer 2023)}{}
+     % \vspace{-4pt} 
+  \resumeSubHeadingListEnd
+% Let LaTeX choose the exact page break; this avoids dangling whitespace.
+
+\section{Publications}
+\vspace{9pt}
+\begin{enumerate}
+    \item {Coherent structure analysis in a backward facing step}, \textbf{Sriram Kalathoor}, Do\u{g}ukan Karahan and Cansu Uzay Karahan, \emph{Bulletin of the American Physical Society}, 2024
+    \item {Chemical analysis of emission characteristics in bluff body stabilized turbulent premixed methane-air flames}, Anant Girdhar, \textbf{Sriram Kalathoor} and Jechiel Jagoda, \emph{Bulletin of the American Physical Society}, 2024
+    \item \href{https://doi.org/10.1115/GT2024-126815}{A numerical study of emission characteristics in bluff body stabilized turbulent premixed methane-air flames in confined environments, Anant Girdhar, \textbf{Sriram Kalathoor}, Jechiel Jagoda and Lakshmi Sankar, \emph{Proc. ASME Turbo Expo 2024}, GT2024-126815, pp. V03AT04A075, London.} DOI: \href{https://doi.org/10.1115/GT2024-126815}{10.1115/GT2024-126815}
+    \item {On the dynamics of instability, transition, and turbulence in the GTRE \emph{Kaveri} afterburner}, \emph{MS Thesis}, \textbf{Sriram Kalathoor}, IIT Madras, 2018\clearpage
+    \vspace*{3pt}
+    \item \href{https://doi.org/10.1115/GT2017-63805}{Multi-scale computational simulation of combustion instability and transition in a model afterburner, \textbf{Sriram Kalathoor} and Satyanarayanan Chakravarthy, \emph{Proc. ASME Turbo Expo 2017}, GT2017-63805, pp. V04AT04A049, Charlotte.} DOI: \href{https://doi.org/10.1115/GT2017-63805}{10.1115/GT2017-63805}
+    \item {Mechanical agitation of bed in a motor-driven two-phase fluidized bed particle seeder}, Ashwin Kannan and \textbf{Sriram Kalathoor}, \emph{Intl. J. Engg . Tr. Tech.}, \textbf{4(10)}, 2013, pp. 4383-4387
+    \item {Solid Particle Seeding Using Cyclone Gas Flow for Optical Flow Visualization: Design Parameters to be Considered}, \textbf{Sriram Kalathoor}, \emph{Adv. Aero. Sci. Tech.}, \textbf{3(2)}, 2013, pp. 57-64
+\end{enumerate}
+
+\section{Publications (Under Review)}
+~\\
+\emph{Under-review and pre-print drafts provided on request}~\\
+  \begin{enumerate}
+    \item {Interfacial roughness spectra and finite-depth salt-finger mixing at a two-layer thermohaline interface}, \textbf{Sriram Kalathoor}, \emph{Submitted to J. Phys. Ocean.}; \href{https://doi.org/10.48550/arXiv.2606.21131}{Preprint available at arXiv.2606.21131}
+    \item {Interfacial spectral memory as a state variable for finite-depth salt-finger exchange}, \textbf{Sriram Kalathoor}, \emph{Submitted to Deep Sea Res. I}; \href{https://doi.org/10.48550/arXiv.2606.26045}{Preprint available at arXiv.2606.26045}
+    \item {Near-field combustion-noise source dynamics in a reacting supersonic temporal mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{Submitted to Comb. Th. Model.}; \href{https://doi.org/10.48550/arXiv.2606.15626}{Preprint available at arXiv.2606.15626}
+    \item {Lagrangian coherent structures in a supersonic reacting temporal mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{Submitted to Chaos}; \href{https://doi.org/10.48550/arXiv.2606.20352}{Preprint available at arXiv.2606.20352}
+    \item {Filtering effects on entropy transport and entropy-production structure in a supersonic reacting shear layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{Submitted to J. Fl. Mech. Rapids}; \href{https://doi.org/10.48550/arXiv.2606.15399}{Preprint available at arXiv.2606.15399}
+    \item {Event-level compression--chemistry coupling in a supersonic reacting temporal mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{Submitted to Combust. Flame}; \href{https://doi.org/10.48550/arXiv.2606.15628}{Preprint available at arXiv.2606.15628}
+    \item {Receptivity and biorthogonal decomposition in a reacting temporal mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{Submitted to Th. Comp. Fl. Dyn.}; \href{https://doi.org/10.48550/arXiv.2606.20819}{Preprint available at arXiv.2606.20819}
+\end{enumerate}
+\section{Publications (In-preparation)}
+~\\
+% \vspace{9pt}
+  \begin{enumerate}
+    \item {Temporal organization of heat release and kinematic activity in a turbulent mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+    \item {Box-filtering effects on time-series diagnostics of a reacting temporal mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+    \item {Intermittent collective low-frequency organization in a turbulent reacting mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+    \item {Modal energetics and disturbance-energy partition in a  turbulent shear layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+    \item {Topology, mixing, compressibility, and reaction physics in a supersonic temporal mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+    \item {Interaction budgets and multiscale coupling in a turbulent shear layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+    \item {Box-filter robustness of modal interaction diagnostics in a supersonic mixing layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+\end{enumerate}
+% Continuation can now flow naturally across pages.
+\clearpage\vspace*{3pt}
+\begin{enumerate}
+\setcounter{enumi}{7}
+     \item {Fractal geometry and multiscale connectivity of a turbulent temporal mixing-layer interface}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+      \item {Local wave--vortex interaction in a turbulent supersonic shear layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+      \item {Reactive-acoustic wave packet dynamics in a supersonic reacting shear layer}, \textbf{Sriram Kalathoor} and Joseph Oefelein, \emph{In preparation (proofreading stage)}
+      \item {Interfacial spectral memory as a state variable for finite-depth salt-finger exchange}, \textbf{Sriram Kalathoor} , \emph{In preparation (writing stage)}
+  \end{enumerate}
+% \clearpage\vspace*{3pt}
+\section{Invited Talks}
+\vspace{9pt}
+\begin{enumerate}
+    \item \textbf{2024-2026} \textemdash\ Graduate student advisor, Yellow Jacket Space Program, GT Supersonics \amp GTXR
+    \item \textbf{2023-2026} \textemdash\ Graduate student supervisor for undergraduate research, High Performance Computing Lab
+    \item \textbf{2023} \textemdash\ Invited panel member for the Graduate School Research Board's discussion series on creating open and collaborative research environments
+    \item \textbf{2022} \textemdash\ Invited panel member for an Office of Undergraduate Education discussion series on undergraduate research
+    \item \textbf{2022} \textemdash\ Invited guest lecturer at the IIT Madras Department of Aerospace Engineering, for lectures on adaptive mesh refinement, and spectral dynamics of turbulent flows
+\end{enumerate}
+\section{Institutional Service}
+\vspace{9pt}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+    {GTAE Brown Bag Seminar Moderator and Judge}{2024-26}
+    {Moderate the weekly Brown Bag student seminars where honors and new graduate students present their research}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Student Volunteer, American Physical Society}{2018}
+    {Assisted with organizing the APS Annual Division of Fluid Dynamics Meet, Atlanta, GA}{}
+    \vspace{3pt} 
+  
+    \resumeSubheading
+    {Group Leader; GT6000 Community, Mentorship \& Support, Georgia Tech}{2022-25}
+    {Serve as a group and community engagement leader for GT6000 (Community, Mentorship \& Support), an extended orientation program for incoming graduate students}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Resident Assistant; Graduate Housing, Georgia Tech}{2020-25}
+    {Resident Assistant with Georgia Tech's Graduate \& Family Housing community}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Georgia Tech EcoReps}{2020-25}
+    {Promoting and facilitating eco-friendly campus operations; also serve as the student head of the composting program across campus residence halls}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Member, Graduate Student Emerging Leader Advisory Board, Georgia Tech}{2023-24}
+    {Serve on the Student Emerging Leaders Advisory Board (by nomination); meet/consult with campus administration and support resources to promote and improve student experience, and represent student voices and perspectives}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Practice Coordinator, Yellow Jacket Archery Club}{2019-24}
+    {Coordinate practices, induction of new members, skill progression, coaching \& training of 200 members in the Georgia Tech Archery Club}{}
+    \vspace{3pt} 
+
+    \resumeSubheading
+    {Hygiene Heroes Program Intern, University of California, Berkeley}{2014-16}
+    {Designed, piloted and analyzed an activity-based health curriculum for implementation in school systems worldwide\hspace{-32pt}}{}
+    \clearpage\vspace*{3pt}
+
+    \resumeSubheading
+    {Teachers Without Borders}{2014-19}
+    {Collaborate with TWB to implement equitable teaching practices and education outreach in underrepresented/marginalized parts of rural India}{}
+    \vspace{3pt} 
+
+\resumeSubHeadingListEnd
+% \clearpage
+% ~\vspace{2pt}\\
+\section{Awards}
+\vspace{9pt}
+\begin{enumerate}
+    \item \textbf{2025} \textemdash\ AE Outstanding Graduate Student Instructor Award (AE 4040, Fall 2025), Georgia Tech Center for Teaching \emph{\&} Learning
+    \item \textbf{2024-25} \textemdash\ Course Instructor Honor Roll (AE 3030, Spring 2024 \amp Spring 2025) for top instructor feedback/ratings, Georgia Tech Center for Teaching \emph{\&} Learning
+    \item \textbf{2024} \textemdash\ AE Outstanding Graduate Teaching Assistant Award (AE 4040, Fall 2023), Georgia Tech Center for Teaching \emph{\&} Learning
+    \item \textbf{2023} \textemdash\ Community Developer of the Year Award, Georgia Tech Department of Housing%\clearpage~\vspace{12pt}
+    % \item \textbf{2022-23} \textemdash\ Various archery awards/medals: All-region Champion (Southeast, 2023), Georgia Cup Silver medalist (2023), Southeast Regionals Gold medalist (2023), Georgia State Indoor Champion (2022)
+    \item \textbf{2022} \textemdash\ CIRTL Associate Fellow, Georgia Tech Center for Teaching \emph{\&} Learning
+    % \item \textbf{2021} \textemdash\ Gold Star Teaching Award, Georgia Tech Center for Teaching \emph{\&} Learning; Spring 2020 - Fall 2020
+    % \item \textbf{2018} \textemdash\ PACE Best Data Visualization Runner-up, Georgia Tech Partnership for Advanced Computing Environment
+    % \item \textbf{2014} \textemdash\ Coursera Teaching Assistantships for \textbf{The Fiction of Relationship} and \textbf{Archaeology's Dirty Little Secrets}; \$5000 Wind Engineering Fellowship for best performance in \textbf{Sports \emph{\&} Building Aerodynamics}
+\end{enumerate}
+% \clearpage
+% ~\vspace{2pt}\\
+
+% Let later short sections flow naturally unless a break is truly needed.
+% \clearpage\vspace*{3pt}
+\begin{enumerate}
+\setcounter{enumi}{3}
+    \item \textbf{2021} \textemdash\  Invited (virtual) guest lecturer at the IIT Madras Department of Aerospace Engineering, for a lecture series on multiscale modeling approaches for capturing combustion instability and transition in jet propulsion devices
+  \end{enumerate}
+
+% \section{Mentorship Experience}
+% \vspace{9pt}
+% \begin{enumerate}
+
+% \end{enumerate}
+% \clearpage\vspace*{3pt}
+% \section{Service}
+% \vspace{9pt}
+% \begin{enumerate}
+
+% \end{enumerate}
+
+\section{Certifications (Current)}
+\vspace{9pt}
+\begin{enumerate}
+    \item \textbf{USA Archery} Level 2 Archery Instructor and Level 2 National Judge
+    \item \textbf{American Red Cross} CPR/First Aid/AED/Concussion Certification
+    \item \textbf{QPR Institute} QPR/Suicide Prevention Gatekeeper
+\end{enumerate}
+
+% \section{References}
+% ~\\
+% \emph{Provided upon request}
+
+\end{document}
+

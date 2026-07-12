@@ -1,4 +1,5 @@
 const filterButtons = [...document.querySelectorAll(".filter-button")];
+const filterSelect = document.querySelector("[data-research-filter]");
 const paperCards = [...document.querySelectorAll(".paper-card, .case-card")];
 const revealTargets = [
   ...document.querySelectorAll(".section, .paper-card, .case-card, .media-card, .research-card, .hero-panel"),
@@ -21,6 +22,10 @@ function setFilter(filter) {
 
 for (const button of filterButtons) {
   button.addEventListener("click", () => setFilter(button.dataset.filter));
+}
+
+if (filterSelect) {
+  filterSelect.addEventListener("change", () => setFilter(filterSelect.value));
 }
 
 function shuffle(values) {

@@ -1371,7 +1371,7 @@ address {
 .research-pillars {
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 42px;
 }
 
@@ -1386,6 +1386,10 @@ address {
 
 .pillar:nth-child(3) {
   border-color: var(--gold);
+}
+
+.pillar:nth-child(4) {
+  border-color: var(--deep);
 }
 
 .pillar > span {
@@ -1479,27 +1483,73 @@ address {
 }
 
 /* Earth-system research program */
+.research-domain-nav {
+  border-bottom: 1px solid var(--line-strong);
+  border-top: 1px solid var(--line-strong);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.research-domain-nav a {
+  align-items: start;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: auto 1fr;
+  padding: 24px 30px 24px 0;
+}
+
+.research-domain-nav a + a {
+  border-left: 1px solid var(--line-strong);
+  padding-left: 30px;
+}
+
+.research-domain-nav > a > span {
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding-top: 4px;
+}
+
+.research-domain-nav strong,
+.research-domain-nav small {
+  display: block;
+}
+
+.research-domain-nav strong {
+  font-family: "Iowan Old Style", "Palatino", "Georgia", serif;
+  font-size: 1.34rem;
+  line-height: 1.2;
+}
+
+.research-domain-nav small {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-top: 7px;
+}
+
+.research-domain-nav a:hover strong {
+  color: var(--teal);
+}
+
 .program-grid {
   display: grid;
   gap: 22px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   margin-top: 40px;
 }
 
 .program-card {
+  align-items: stretch;
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 8px;
   display: grid;
-  grid-template-rows: 260px 1fr;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(0, 1.1fr);
   overflow: hidden;
 }
 
 .program-card-wide {
-  align-items: stretch;
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
-  grid-template-rows: none;
+  grid-column: auto;
 }
 
 .program-card img,
@@ -1507,18 +1557,20 @@ address {
   background: #06151b;
   display: block;
   height: 100%;
-  min-height: 260px;
+  min-height: 300px;
   object-fit: cover;
   width: 100%;
 }
 
-.program-card-wide img,
-.program-card-wide video {
-  min-height: 340px;
+.program-card .program-visual-contain {
+  background: #071820;
+  object-fit: contain;
+  padding: 12px;
 }
 
 .program-card > div {
-  padding: 24px;
+  align-self: center;
+  padding: 30px;
 }
 
 .program-status {
@@ -1540,6 +1592,7 @@ address {
 }
 
 .program-card .text-link {
+  color: var(--oxide);
   margin-top: 18px;
 }
 
@@ -1602,9 +1655,9 @@ address {
     grid-template-columns: 1fr;
   }
 
-  .program-card-wide {
-    grid-template-columns: 1fr;
-    grid-template-rows: 300px 1fr;
+  .research-pillars,
+  .program-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1686,13 +1739,32 @@ address {
     grid-template-columns: 1fr;
   }
 
+  .research-domain-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .research-domain-nav a {
+    padding: 20px 0;
+  }
+
+  .research-domain-nav a + a {
+    border-left: 0;
+    border-top: 1px solid var(--line-strong);
+    padding-left: 0;
+  }
+
   .program-grid {
     grid-template-columns: 1fr;
   }
 
-  .program-card-wide {
-    grid-column: auto;
+  .program-card {
+    grid-template-columns: 1fr;
     grid-template-rows: 240px 1fr;
+  }
+
+  .program-card img,
+  .program-card video {
+    min-height: 240px;
   }
 
   .research-filter-control {

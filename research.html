@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Research | Sriram Kalathoor" />
     <meta name="twitter:description" content="Environmental transport, computational geophysical fluid dynamics, ocean mixing, turbulence, and reacting flows." />
-    <link rel="stylesheet" href="styles.css?v=20260712-earth-systems" />
+    <link rel="stylesheet" href="styles.css?v=20260723-portfolio-balance" />
   </head>
   <body>
     <header class="site-header">
@@ -38,13 +38,30 @@
     <main>
       <section class="page-hero">
         <p class="eyebrow">Research</p>
-        <h1>Transport Across Earth Systems.</h1>
+        <h1>Transport Across Natural and Engineered Flows.</h1>
         <p>
-          I study how finite interfaces, coherent structures, and turbulent pathways regulate the movement of heat,
-          salt, momentum, and reactive material. High-resolution simulation is coupled with observations and
-          measurement-aware analysis to connect local fluid mechanics with oceanic, atmospheric, and engineered systems.
+          I study how interfaces, coherent structures, and turbulent pathways regulate heat, salt, momentum, and
+          reactive material. High-resolution simulation, observations, and measurement-aware analysis connect local
+          fluid mechanics with oceanic, polar, reacting, compressible, and engineered systems.
         </p>
       </section>
+
+      <nav class="research-domain-nav" aria-label="Research domains">
+        <a href="#earth-system-program">
+          <span>01</span>
+          <div>
+            <strong>Earth and environmental fluid dynamics</strong>
+            <small>Ocean mixing, polar interfaces, sparse observation, and finite-depth transport</small>
+          </div>
+        </a>
+        <a href="#broader-fluids">
+          <span>02</span>
+          <div>
+            <strong>Aerospace and computational fluid dynamics</strong>
+            <small>Combustion, propulsion, acoustics, turbulence, numerical modeling, and design</small>
+          </div>
+        </a>
+      </nav>
 
       <section class="section" id="earth-system-program">
         <div class="section-heading compact-heading">
@@ -58,7 +75,7 @@
         </div>
 
         <div class="program-grid">
-          <article class="program-card program-card-wide">
+          <article class="program-card">
             <video src="assets/research/swf-salinity-y-mid.mp4" controls muted playsinline preload="metadata"></video>
             <div>
               <p class="program-status">Submitted · Journal of Physical Oceanography</p>
@@ -69,9 +86,9 @@
           </article>
 
           <article class="program-card">
-            <img src="assets/research/swf-vertical-velocity-z-mid.png" alt="Planform vertical-velocity structure in the salt-finger plume forest" />
+            <img class="program-visual-contain" src="assets/research/swf-vertical-velocity-z-mid.png" alt="Planform vertical-velocity structure in the salt-finger plume forest" />
             <div>
-              <p class="program-status">Submitted · Ocean Modelling</p>
+              <p class="program-status">Preprint · manuscript in revision</p>
               <h3>Spectral memory as a finite-interface state variable</h3>
               <p>Interfaces with the same local thermodynamic controls follow different exchange pathways when they inherit different finite-amplitude spectral states.</p>
               <a class="text-link" href="https://doi.org/10.48550/arXiv.2606.26045">Read the preprint <span aria-hidden="true">→</span></a>
@@ -84,20 +101,21 @@
               <p class="program-status">Submitted · Ocean Dynamics</p>
               <h3>Observability from sparse temperature-salinity measurements</h3>
               <p>Resolved fields are reduced to profiles, bundles, coarse vertical samples, and section-like measurements to determine which route properties survive realistic observation.</p>
+              <a class="text-link" href="https://doi.org/10.48550/arXiv.2607.16272">Read the preprint <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
           <article class="program-card">
-            <img src="assets/research/earth-system/route-survival-mean-shear.png" alt="Data-derived route-survival trajectories under imposed mean shear" />
+            <img class="program-visual-contain" src="assets/research/earth-system/route-survival-mean-shear.png" alt="Data-derived route-survival trajectories under imposed mean shear" />
             <div>
-              <p class="program-status">Submitted · Experiments in Fluids</p>
+              <p class="program-status">Submitted · Environmental Fluid Mechanics</p>
               <h3>Route survival under imposed mean shear</h3>
               <p>Finite-depth reach and contact timing survive the imposed shear while the spectral pathway is redistributed, separating where a route reaches from how it remains connected.</p>
               <a class="text-link" href="https://doi.org/10.48550/arXiv.2607.07012">Read the preprint <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="program-card program-card-wide">
+          <article class="program-card">
             <img src="assets/research/earth-system/polar-heat-gate-states.png" alt="Observed finite polar heat-gate states derived from hydrographic profiles" />
             <div>
               <p class="program-status">Prepared for Polar Science</p>
@@ -110,7 +128,7 @@
 
       <section class="section" id="broader-fluids">
         <div class="research-filter-control">
-          <label for="research-filter">Explore the broader portfolio</label>
+          <label for="research-filter">Explore aerospace and computational research</label>
           <select id="research-filter" data-research-filter>
             <option value="all">All research areas</option>
             <option value="transport">Transport and mixing</option>
@@ -125,11 +143,12 @@
         </div>
 
         <div class="section-heading compact-heading">
-          <p class="eyebrow">Broader fluid dynamics</p>
-          <h2>Reacting flows, acoustics, compressibility, topology, and simulation.</h2>
+          <p class="eyebrow">Aerospace and computational fluid dynamics</p>
+          <h2>Combustion, propulsion, acoustics, turbulence, and simulation.</h2>
           <p>
-            Aerospace and thermofluids research supplies the broader mechanics: scalar mixing, chemical heat release,
-            wave-vortex interaction, instability, entropy transport, flow separation, and simulation-guided design.
+            Across propulsion and thermofluids, I study scalar mixing, chemical heat release, wave-vortex interaction,
+            instability, entropy transport, flow separation, and simulation-guided design. The work combines
+            high-fidelity CFD, topological and reduced-order analysis, multiphysics modeling, and engineering judgment.
           </p>
         </div>
 
@@ -515,6 +534,6 @@
       <span>Thermofluids · ocean mixing · acoustics · filtering · topology · transport.</span>
     </footer>
 
-    <script src="script.js?v=20260712-earth-systems"></script>
+    <script src="script.js?v=20260723-portfolio-balance"></script>
   </body>
 </html>

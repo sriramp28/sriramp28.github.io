@@ -2,11 +2,71 @@ const filterButtons = [...document.querySelectorAll(".filter-button")];
 const filterSelect = document.querySelector("[data-research-filter]");
 const paperCards = [...document.querySelectorAll(".paper-card, .case-card")];
 const revealTargets = [
-  ...document.querySelectorAll(".section, .paper-card, .case-card, .media-card, .research-card, .hero-panel"),
+  ...document.querySelectorAll(".section, .paper-card, .case-card, .media-card, .research-card, .hero-panel, .domain-preview-card, .cross-domain-callout"),
 ];
 const feedbackGrid = document.querySelector("[data-feedback-grid]");
 const feedbackQuotesScript = document.querySelector("#feedback-quotes");
 const mailtoForms = [...document.querySelectorAll("[data-mailto-form]")];
+const navDropdowns = [...document.querySelectorAll(".nav-dropdown")];
+
+function setNavDropdown(dropdown, open, forceClosed = false) {
+  const toggle = dropdown.querySelector(".nav-dropdown-toggle");
+  dropdown.classList.toggle("open", open);
+  dropdown.classList.toggle("force-closed", forceClosed);
+  toggle?.setAttribute("aria-expanded", String(open));
+}
+
+for (const dropdown of navDropdowns) {
+  const toggle = dropdown.querySelector(".nav-dropdown-toggle");
+
+  toggle?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const nextState = !dropdown.classList.contains("open");
+    for (const otherDropdown of navDropdowns) {
+      setNavDropdown(otherDropdown, false);
+    }
+    setNavDropdown(dropdown, nextState);
+  });
+
+  dropdown.addEventListener("mouseenter", () => {
+    dropdown.classList.remove("force-closed");
+    toggle?.setAttribute("aria-expanded", "true");
+  });
+
+  dropdown.addEventListener("mouseleave", () => {
+    if (!dropdown.classList.contains("open")) {
+      toggle?.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  dropdown.addEventListener("focusin", () => {
+    dropdown.classList.remove("force-closed");
+    toggle?.setAttribute("aria-expanded", "true");
+  });
+
+  dropdown.addEventListener("focusout", () => {
+    window.setTimeout(() => {
+      if (!dropdown.contains(document.activeElement) && !dropdown.classList.contains("open")) {
+        setNavDropdown(dropdown, false);
+      }
+    }, 0);
+  });
+
+  dropdown.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setNavDropdown(dropdown, false, true);
+      toggle?.focus();
+    }
+  });
+}
+
+document.addEventListener("click", (event) => {
+  for (const dropdown of navDropdowns) {
+    if (!dropdown.contains(event.target)) {
+      setNavDropdown(dropdown, false);
+    }
+  }
+});
 
 function setFilter(filter) {
   for (const button of filterButtons) {

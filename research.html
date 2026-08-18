@@ -6,18 +6,23 @@
     <title>Research | Sriram Kalathoor</title>
     <meta
       name="description"
-      content="Research by Sriram Kalathoor on environmental transport, computational geophysical fluid dynamics, ocean mixing, polar interfaces, turbulence, reacting flows, and numerical simulation."
+      content="Research by Sriram Kalathoor across aerospace and geophysical fluid dynamics, including propulsion, reacting flows, ocean mixing, stratification, sparse observation, and numerical simulation."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sriramp28.github.io/research.html" />
     <meta property="og:title" content="Research | Sriram Kalathoor" />
-    <meta property="og:description" content="Environmental transport across oceanic and polar interfaces, sparse observation, turbulence, reacting flows, and computational physics." />
+    <meta property="og:description" content="Aerospace and geophysical fluid dynamics joined by transport physics, high-fidelity simulation, and measurement-aware analysis." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sriramp28.github.io/research.html" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://sriramp28.github.io/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sriram Kalathoor computational fluid dynamics across aerospace and geophysical systems" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Research | Sriram Kalathoor" />
-    <meta name="twitter:description" content="Environmental transport, computational geophysical fluid dynamics, ocean mixing, turbulence, and reacting flows." />
-    <link rel="stylesheet" href="styles.css?v=20260723-portfolio-balance" />
+    <meta name="twitter:description" content="Propulsion, reacting flows, ocean mixing, stratification, turbulence, and computational physics." />
+    <meta name="twitter:image" content="https://sriramp28.github.io/assets/social-preview.png" />
+    <link rel="stylesheet" href="styles.css?v=20260818-research-split" />
   </head>
   <body>
     <header class="site-header">
@@ -25,7 +30,16 @@
         <a class="brand" href="index.html">Sriram Kalathoor</a>
         <div class="nav-links">
           <a href="index.html">Overview</a>
-          <a aria-current="page" href="research.html">Research</a>
+          <div class="nav-dropdown current-section">
+            <div class="nav-dropdown-trigger">
+              <a class="nav-dropdown-link" aria-current="page" href="research.html">Research</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="research-submenu" aria-label="Open research menu"><span aria-hidden="true">⌄</span></button>
+            </div>
+            <div class="nav-dropdown-menu" id="research-submenu">
+              <a href="research-aerospace.html">Aerospace Engineering</a>
+              <a href="research-geophysics.html">Geophysics &amp; Oceanography</a>
+            </div>
+          </div>
           <a href="media.html">Visuals</a>
           <a href="teaching.html">Teaching</a>
           <a href="about.html">About Me</a>
@@ -38,492 +52,96 @@
     <main>
       <section class="page-hero">
         <p class="eyebrow">Research</p>
-        <h1>Transport Across Natural and Engineered Flows.</h1>
+        <h1>Transport Across Aerospace and Geophysical Flows.</h1>
         <p>
-          I study how interfaces, coherent structures, and turbulent pathways regulate heat, salt, momentum, and
-          reactive material. High-resolution simulation, observations, and measurement-aware analysis connect local
-          fluid mechanics with oceanic, polar, reacting, compressible, and engineered systems.
+          My research examines how interfaces, coherent structures, and instabilities regulate heat, salt, momentum,
+          and reactive material. High-resolution simulation, mathematical diagnostics, and measurement-aware analysis
+          connect local fluid mechanics to propulsion systems, reacting shear layers, stratified oceans, and polar interfaces.
         </p>
       </section>
 
       <nav class="research-domain-nav" aria-label="Research domains">
-        <a href="#earth-system-program">
+        <a href="research-aerospace.html">
           <span>01</span>
           <div>
-            <strong>Earth and environmental fluid dynamics</strong>
-            <small>Ocean mixing, polar interfaces, sparse observation, and finite-depth transport</small>
+            <strong>Aerospace and engineered fluid dynamics</strong>
+            <small>Propulsion, reacting flows, acoustics, turbulence, numerical modeling, and design</small>
           </div>
         </a>
-        <a href="#broader-fluids">
+        <a href="research-geophysics.html">
           <span>02</span>
           <div>
-            <strong>Aerospace and computational fluid dynamics</strong>
-            <small>Combustion, propulsion, acoustics, turbulence, numerical modeling, and design</small>
+            <strong>Geophysical and environmental fluid dynamics</strong>
+            <small>Ocean mixing, polar interfaces, stratification, sparse observation, and finite-depth transport</small>
           </div>
         </a>
       </nav>
 
-      <section class="section" id="earth-system-program">
+      <section class="section research-overview-section">
         <div class="section-heading compact-heading">
-          <p class="eyebrow">Earth-system transport</p>
-          <h2>One interface problem, five complementary views.</h2>
+          <p class="eyebrow">Two research programs</p>
+          <h2>Distinct systems, shared questions.</h2>
           <p>
-            The current program moves from route selection in resolved salt-finger fields to finite-interface memory,
-            sparse observability, mean-shear survival, and polar hydrographic structure. Together, the studies ask what
-            an interface remembers, how that memory changes exchange, and what environmental measurements can recover.
+            Aerospace and geophysical flows differ in scale, forcing, and purpose. I approach both through the same
+            physical questions about how interfaces, coherent structures, and instabilities organize transport, how
+            numerical resolution changes what we infer, and what practical measurements can recover.
           </p>
         </div>
 
-        <div class="program-grid">
-          <article class="program-card">
-            <video src="assets/research/swf-salinity-y-mid.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="domain-preview-grid">
+          <article class="domain-preview-card">
+            <img src="assets/research/tml-flow-thermochemical-interfaces.png" alt="Thermochemical interfaces in a reacting supersonic shear layer" />
             <div>
-              <p class="program-status">Submitted · Journal of Physical Oceanography</p>
-              <h3>Interfacial roughness spectra and finite-depth salt-finger mixing</h3>
-              <p>The imposed horizontal spectrum selects whether a plume forest remains localized, connects rapidly across the finite layer, or reaches a broad branch through delayed modal transfer.</p>
-              <a class="text-link" href="https://doi.org/10.48550/arXiv.2606.21131">Read the preprint <span aria-hidden="true">→</span></a>
+              <p class="eyebrow">Aerospace Engineering</p>
+              <h2>Reacting flows, propulsion, acoustics, and computation.</h2>
+              <p>
+                This program examines mixing, chemical heat release, compressibility, combustion noise, coherent
+                structure, entropy transport, and simulation-guided engineering design.
+              </p>
+              <a class="button primary" href="research-aerospace.html">Explore aerospace research</a>
             </div>
           </article>
 
-          <article class="program-card">
-            <img class="program-visual-contain" src="assets/research/swf-vertical-velocity-z-mid.png" alt="Planform vertical-velocity structure in the salt-finger plume forest" />
+          <article class="domain-preview-card">
+            <img src="assets/research/earth-system/salt-finger-interface-hero.jpg" alt="Resolved salt-finger interface with hydrographic sampling locations" />
             <div>
-              <p class="program-status">Preprint · manuscript in revision</p>
-              <h3>Spectral memory as a finite-interface state variable</h3>
-              <p>Interfaces with the same local thermodynamic controls follow different exchange pathways when they inherit different finite-amplitude spectral states.</p>
-              <a class="text-link" href="https://doi.org/10.48550/arXiv.2606.26045">Read the preprint <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <article class="program-card">
-            <img src="assets/research/earth-system/salt-finger-interface-hero.jpg" alt="Resolved salt-finger interface with hydrographic sampling locations and salinity contours" />
-            <div>
-              <p class="program-status">Submitted · Ocean Dynamics</p>
-              <h3>Observability from sparse temperature-salinity measurements</h3>
-              <p>Resolved fields are reduced to profiles, bundles, coarse vertical samples, and section-like measurements to determine which route properties survive realistic observation.</p>
-              <a class="text-link" href="https://doi.org/10.48550/arXiv.2607.16272">Read the preprint <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <article class="program-card">
-            <img class="program-visual-contain" src="assets/research/earth-system/route-survival-mean-shear.png" alt="Data-derived route-survival trajectories under imposed mean shear" />
-            <div>
-              <p class="program-status">Submitted · Environmental Fluid Mechanics</p>
-              <h3>Route survival under imposed mean shear</h3>
-              <p>Finite-depth reach and contact timing survive the imposed shear while the spectral pathway is redistributed, separating where a route reaches from how it remains connected.</p>
-              <a class="text-link" href="https://doi.org/10.48550/arXiv.2607.07012">Read the preprint <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <article class="program-card">
-            <img src="assets/research/earth-system/polar-heat-gate-states.png" alt="Observed finite polar heat-gate states derived from hydrographic profiles" />
-            <div>
-              <p class="program-status">Prepared for Polar Science</p>
-              <h3>Finite thermohaline interfaces as polar heat-leak gates</h3>
-              <p>Ice-Tethered Profiler and Beaufort Gyre observations separate local double-diffusive favorability from finite thickness, reservoir access, and salinity-density shielding.</p>
+              <p class="eyebrow">Geophysics &amp; Oceanography</p>
+              <h2>Stratification, ocean mixing, and environmental observation.</h2>
+              <p>
+                This program studies finite-depth double diffusion, interfacial memory, route survival, polar heat
+                transport, and what sparse temperature and salinity measurements preserve.
+              </p>
+              <a class="button primary" href="research-geophysics.html">Explore geophysical research</a>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section" id="broader-fluids">
-        <div class="research-filter-control">
-          <label for="research-filter">Explore aerospace and computational research</label>
-          <select id="research-filter" data-research-filter>
-            <option value="all">All research areas</option>
-            <option value="transport">Transport and mixing</option>
-            <option value="turbulence">Turbulence</option>
-            <option value="combustion">Combustion</option>
-            <option value="acoustics">Acoustics and waves</option>
-            <option value="filtering">Filtering and reduced resolution</option>
-            <option value="topology">Topology and coherent structure</option>
-            <option value="numerical">Numerical methods</option>
-            <option value="design">Applied design systems</option>
-          </select>
-        </div>
-
+      <section class="section shared-methods-section">
         <div class="section-heading compact-heading">
-          <p class="eyebrow">Aerospace and computational fluid dynamics</p>
-          <h2>Combustion, propulsion, acoustics, turbulence, and simulation.</h2>
-          <p>
-            Across propulsion and thermofluids, I study scalar mixing, chemical heat release, wave-vortex interaction,
-            instability, entropy transport, flow separation, and simulation-guided design. The work combines
-            high-fidelity CFD, topological and reduced-order analysis, multiphysics modeling, and engineering judgment.
-          </p>
+          <p class="eyebrow">Shared computational practice</p>
+          <h2>Methods that travel between domains.</h2>
         </div>
-
-        <div class="mixed-research-grid">
-          <article class="paper-card feature" style="order: 0" data-tags="design multiphysics propulsion heat acoustics numerical">
-            <div class="paper-tag">Applied propulsion design</div>
-            <h3>Simulation-guided design of engine configurations under emissions, noise, and stability constraints</h3>
-            <p>
-              Applied propulsion work has connected injector design, droplet-cloud transport, evaporation and heat
-              transfer, wall cooling, air-bleed profiles, combustor acoustics, emissions trends, and engine-geometry
-              changes. These studies combine high-fidelity flow simulation with finite-element and coupled-field
-              interpretation of structural response, so design changes can be judged against thermal loading, acoustic
-              behavior, structural integrity, manufacturability, and regulatory constraints.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/droplet-flowfield.png" alt="Flow field in a supersonic engine-relevant configuration" />
-            </figure>
+        <div class="research-pillars">
+          <article class="pillar">
+            <span>01</span>
+            <h3>High-fidelity simulation</h3>
+            <p>Direct and large-eddy simulation, multiphysics modeling, verification, and high-performance computing.</p>
           </article>
-
-          <article class="case-card" style="order: 2" data-tags="combustion emissions propulsion fluids transport design">
-            <div class="case-media two-up">
-              <img src="assets/research/bluff-velocity.jpg" alt="Velocity field in a bluff-body combustor" />
-              <img src="assets/research/bluff-co-variation.jpg" alt="CO variation downstream of a bluff body" />
-            </div>
-            <div class="paper-tag">Combustion emissions</div>
-            <h3>Emission structure in a bluff-body combustor</h3>
-            <p>
-              Practical combustors must balance stability, mixing, temperature rise, and emissions. These simulations
-              connect the velocity field, downstream carbon-monoxide distribution, and flow-variable correlations to
-              identify which regions and mechanisms most strongly influence pollutant formation. The same analysis
-              framework supports combustor geometry and flow-rate trade studies where emissions reduction has to be
-              balanced against thermal loading and operability.
-            </p>
-            <figure class="inline-figure">
-              <img src="assets/research/bluff-correlations.png" alt="Correlation map between flow variables and emissions" />
-            </figure>
+          <article class="pillar">
+            <span>02</span>
+            <h3>Structure and transport</h3>
+            <p>Coherent structures, topology, conservation budgets, spectral analysis, and Lagrangian diagnostics.</p>
           </article>
-
-          <article class="case-card" style="order: 4" data-tags="combustion acoustics propulsion heat design">
-            <div class="case-media">
-              <img src="assets/research/combustion-instability-map.png" alt="Combustion instability operating map" />
-            </div>
-            <div class="paper-tag">Afterburner instability</div>
-            <h3>Operating-state feedback in a practical afterburner</h3>
-            <p>
-              Combustion instability emerges when unsteady heat release and acoustic modes reinforce each other. The
-              operating map links flow rate, heat-release fluctuation strength, and dominant acoustic frequency to
-              identify feedback-prone regions, while the pressure spectrum highlights the loudest unstable modes.
-              This work connects noise and stability requirements to combustor flow and structural design decisions.
-            </p>
-            <div class="case-media two-up">
-              <img src="assets/research/combustion-pressure-lockon.png" alt="Dominant pressure spectrum modes in an unstable afterburner" />
-              <video src="assets/research/combustion-heat-release.mp4" controls muted playsinline></video>
-            </div>
+          <article class="pillar">
+            <span>03</span>
+            <h3>Reduced descriptions</h3>
+            <p>Filtering, model assessment, reduced-order analysis, and careful tests of what survives lower resolution.</p>
           </article>
-
-          <article class="case-card accent-card" style="order: 7" data-tags="combustion emissions propulsion transport fluids design">
-            <div class="case-media two-up">
-              <img src="assets/research/droplet-annular-inlet.png" alt="Droplet distribution in an annular inlet" />
-              <img src="assets/research/droplet-flowfield.png" alt="Full-domain flow field in a supersonic engine configuration" />
-            </div>
-            <div class="paper-tag">Spray and propulsion systems</div>
-            <h3>Droplet transport in an annular engine inlet</h3>
-            <p>
-              Liquid fuel placement and carrier-flow structure control evaporation, mixing, emissions, and operability.
-              The visualizations show droplet distribution and the surrounding flow field in a supersonic engine-relevant
-              configuration, highlighting how inlet nonuniformity can propagate into downstream combustion behavior.
-              The design context includes injector assessment, droplet-cloud evolution, evaporation and heat-transfer
-              rates, and downstream thermal-load implications.
-            </p>
-          </article>
-
-          <article class="case-card accent-card" style="order: 13" data-tags="numerical acoustics shocks topology fluids">
-            <div class="case-media">
-              <video src="assets/research/four-point-shock.mp4" controls muted playsinline></video>
-            </div>
-            <div class="paper-tag">Shock interaction</div>
-            <h3>Vorticity generation in a four-shock Riemann problem</h3>
-            <p>
-              Colliding shock systems generate vorticity, pressure-wave interactions, and rapidly changing interface
-              geometry. The movie visualizes vorticity induced by moving shocks with pressure contours overlaid, making
-              the coupling between wave motion and rotational structure visible in time. The calculation is useful as a
-              compact stress test for shock-capturing behavior, interface deformation, and the conversion of compressive
-              motion into rotational flow.
-            </p>
-          </article>
-
-          <article class="case-card accent-card" style="order: 9" data-tags="combustion topology propulsion heat transport turbulence design">
-            <div class="case-media">
-              <img src="assets/research/jicf-qcriterion.png" alt="Q-criterion and streamlines in a methane-air jet-in-crossflow" />
-            </div>
-            <div class="paper-tag">Jet-in-crossflow combustion</div>
-            <h3>Mixing and heat release in a methane-air jet-in-crossflow</h3>
-            <p>
-              Jet-in-crossflow injection is central to many air-breathing combustion systems. Vortical structures,
-              streamlines, temperature projection, mixture fraction, and heat-release contours show how jet penetration,
-              shear-layer rollup, and scalar mixing shape flame anchoring and thermal loading.
-            </p>
-            <figure class="inline-figure">
-              <img src="assets/research/jicf-mixture-heat-release.png" alt="Mixture fraction contours with heat release rate overlays" />
-            </figure>
-          </article>
-
-          <article class="case-card stacked-flow-card accent-card" style="order: 15" data-tags="design topology numerical separated fluids turbulence">
-            <div class="case-media">
-              <img src="assets/research/separating-reattaching-isovolume.png" alt="Isovolumes of wall-normal velocity in a periodic-hill flow" />
-            </div>
-            <div class="paper-tag">Separated-flow dynamics</div>
-            <h3>Unsteady separation and reattachment over periodic hills</h3>
-            <p>
-              Separating and reattaching flows are common in diffusers, ducts, turbomachinery passages, and thermal
-              management hardware. Isovolumes and wall-projected structures show how large coherent motion interacts
-              with near-wall vorticity and reattachment dynamics.
-            </p>
-            <div class="case-media">
-              <video src="assets/research/separating-reattaching-flow.mp4" controls muted playsinline></video>
-            </div>
-          </article>
-
-          <article class="case-card accent-card" style="order: 11" data-tags="acoustics waves numerical design multiphysics">
-            <div class="case-media two-up">
-              <video src="assets/research/sound-in-a-box-absorbing-wall.mp4" controls muted playsinline></video>
-              <img src="assets/research/sound-in-a-box-high-order-error.png" alt="Error comparison for high-order wave-equation schemes" />
-            </div>
-            <div class="paper-tag">Room acoustics</div>
-            <h3>Sound propagation in an absorptive enclosure</h3>
-            <p>
-              A damped wave-equation simulation shows how sound emitted from a speaker-like source reflects, spreads,
-              and decays inside an enclosed space with one absorbing wall. High-order schemes reduce numerical dispersion,
-              which is essential when the goal is to predict how sound feels across a room rather than only whether a wave
-              reaches a point.
-            </p>
-          </article>
-          <article class="paper-card" style="order: 6" data-tags="numerical filtering topology acoustics transport multiphysics">
-            <div class="paper-tag">Numerical simulation</div>
-            <h3>Mesh-based modeling, discretization, and high-performance simulation workflows</h3>
-            <p>
-              Across my research, the technical workflow combines governing-equation modeling, mesh-based
-              discretization, numerical reasoning shared across finite-volume and finite-element formulations, parallel
-              execution, field reconstruction, and quantitative postprocessing for coupled transport, acoustic, and
-              reacting-flow systems. It also includes practical geometry preparation, meshing, design sweeps, and
-              interpretation across CFD, FEA, and coupled multiphysics tools. The emphasis is on building simulations
-              that can be interrogated after the fact,
-              so that fields, derived quantities, event sets, spectra, and reduced diagnostics remain traceable back to
-              the underlying conservation laws.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-composition-topology-atlas.png" alt="Composition-conditioned topology atlas for reacting-flow diagnostics" />
-            </figure>
-          </article>
-
-          <article class="paper-card feature accent-card" style="order: 1" data-tags="topology filtering combustion turbulence transport fluids heat">
-            <div class="paper-tag">Flow physics atlas</div>
-            <h3>Topology, mixing, compressibility, and reaction physics in a supersonic hydrogen-air temporal mixing layer</h3>
-            <p>
-              A broad characterization of a reacting shear layer showing how vortical motion, scalar interfaces, heat
-              release, baroclinicity, compressible work, and turbulence anisotropy occupy related but distinct supports.
-              This study provides the physical baseline for the filtering and interscale analyses. The emphasis is on
-              locating where momentum transport, mixing, thermal activity, and chemical response coincide, and where
-              they separate into different regions of the layer.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-flow-thermochemical-interfaces.png" alt="Thermochemical interfaces, reaction zones, and topology in a reacting mixing layer" />
-            </figure>
-          </article>
-
-          <article class="paper-card accent-card" style="order: 3" data-tags="timeseries combustion acoustics turbulence">
-            <div class="paper-tag">Temporal dynamics</div>
-            <h3>Temporal organization of heat release and kinematic activity in a turbulent mixing layer</h3>
-            <p>
-              Time-series diagnostics quantify recurrence, spectra, nonlinear dependence, and modal structure in heat
-              release, dilatation, and vorticity signals extracted from the reacting layer. The resulting picture connects
-              intermittent thermochemical bursts with the temporal organization of compressive and vortical activity,
-              rather than treating the signals as isolated scalar histories.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-atsa-temporal-wavelet-coherence.png" alt="Wavelet coherence for heat release and dilatation time series" />
-            </figure>
-          </article>
-
-          <article class="paper-card accent-card" style="order: 5" data-tags="timeseries filtering numerical">
-            <div class="paper-tag">Filtering time signatures</div>
-            <h3>Box-filtering effects on time-series diagnostics of a reacting temporal mixing layer</h3>
-            <p>
-              Box filtering is treated as a diagnostic intervention on unsteady dynamics, revealing which amplitudes,
-              timing signatures, phase relations, and coherent structures survive scale-selective attenuation.
-              This branch connects directly to scale-resolved modeling questions while keeping the emphasis on physical
-              behavior rather than one method family. The recurrence structure is especially useful because it shows how
-              filtering changes the geometry of repeated states, not only the signal amplitude.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-atsa-filtered-recurrence.png" alt="Recurrence structure across reference and filtered time-series signals" />
-            </figure>
-          </article>
-
-          <article class="paper-card" style="order: 14" data-tags="timeseries acoustics combustion turbulence">
-            <div class="paper-tag">Low-frequency organization</div>
-            <h3>Intermittent collective low-frequency organization in a turbulent reacting mixing layer</h3>
-            <p>
-              Phase-alignment maps and event composites identify intermittent windows where heat release, dilatation, and
-              vortical activity become collectively organized at low frequency. These windows help separate persistent
-              low-frequency coordination from short-lived amplitude bursts, giving a clearer view of when the reacting
-              layer behaves as a coupled thermo-kinematic system.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-lowfreq-phase-map.png" alt="Low-frequency phase alignment map" />
-            </figure>
-          </article>
-
-          <article class="paper-card" style="order: 16" data-tags="modal acoustics transport numerical">
-            <div class="paper-tag">Disturbance energetics</div>
-            <h3>Modal energetics and disturbance-energy partition in a reacting shear layer</h3>
-            <p>
-              Acoustic, vortical, entropic, and cross-energy components are separated to clarify how a reacting shear layer
-              stores disturbance energy across thermodynamic and kinematic branches. The decomposition makes it possible
-              to ask whether energetic structure is primarily compressive, vortical, thermal, or mixed, which is difficult
-              to infer from primitive variables alone.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-modal-thermochem-state.png" alt="Modal thermochemical state maps" />
-            </figure>
-          </article>
-
-          <article class="paper-card" style="order: 10" data-tags="modal transport heat numerical">
-            <div class="paper-tag">Interaction budgets</div>
-            <h3>Interaction budgets and multiscale coupling in a reacting shear layer</h3>
-            <p>
-              Mass-like, force-like, and heat-like interaction families are compared in physical space, PDFs, spectra,
-              wavelets, and dominance maps to expose non-additive multiscale coupling. The comparison is designed to show
-              whether scale-to-scale organization is carried by one dominant mechanism or by competing pathways that
-              occupy different regions of transform space.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-modal-wavelet-dominance.png" alt="Wavelet dominance atlas for interaction budgets" />
-            </figure>
-          </article>
-
-          <article class="paper-card accent-card" style="order: 19" data-tags="modal filtering numerical transport">
-            <div class="paper-tag">Filtered modal interactions</div>
-            <h3>Box-filter robustness of modal interaction diagnostics in a reacting shear layer</h3>
-            <p>
-              Modal interaction diagnostics are filtered directly and through commutation checks to determine which
-              coupling measures are robust enough for scale-resolved interpretation.
-              The emphasis is on what reduced-resolution simulation can preserve, distort, or require modeling.
-              This gives a direct bridge between modal physics and practical filtering decisions in reduced-resolution
-              reacting-flow calculations.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-modal-filter-wavelet-heat.png" alt="Filtered heat-interaction wavelet scalograms across filter widths" />
-            </figure>
-          </article>
-
-          <article class="paper-card accent-card" style="order: 17" data-tags="filtering heat transport multiphysics">
-            <div class="paper-tag">Entropy and irreversibility</div>
-            <h3>Filtering effects on entropy transport and entropy-production structure in a supersonic reacting shear layer</h3>
-            <p>
-              Entropy-like transport and production proxies show how filtering reshapes localized irreversible activity
-              near sharp scalar, thermal, and compressive gradients. The analysis connects numerical scale removal with
-              thermodynamic interpretation, highlighting where smoothing alters the apparent support of dissipation-like
-              and entropy-producing processes.
-            </p>
-            <p>
-              Submitted to J. Fluid Mech. Rapids; preprint available as <a href="https://doi.org/10.48550/arXiv.2606.15399">arXiv:2606.15399</a>.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-entropy-snapshot.png" alt="Entropy and entropy-production support in the reacting layer" />
-            </figure>
-          </article>
-
-          <article class="paper-card" style="order: 18" data-tags="topology transport turbulence">
-            <div class="paper-tag">Interface geometry</div>
-            <h3>Fractal geometry and multiscale connectivity of a reacting temporal mixing-layer interface</h3>
-            <p>
-              Mixture-fraction interfaces are analyzed through fractal dimension, connectivity, curvature, and
-              thermochemical alignment to connect geometry with reaction-zone structure. The goal is to quantify how
-              convoluted scalar surfaces organize heat release and mixing, rather than describing the interface only
-              through visual complexity.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-fractal-interface.png" alt="Thermal and scalar interfaces in a reacting mixing layer" />
-            </figure>
-          </article>
-
-          <article class="paper-card" style="order: 8" data-tags="topology timeseries transport turbulence">
-            <div class="paper-tag">Lagrangian transport</div>
-            <h3>Lagrangian coherent structures in a supersonic reacting temporal mixing layer</h3>
-            <p>
-              FTLE ridges locate attracting and repelling material structures that organize scalar transport, ridge
-              intersections, and thermochemical signatures in the evolving layer. These structures provide a material
-              view of mixing, showing how transport barriers and stretching regions guide where reactive scalars are
-              brought together.
-            </p>
-            <p>
-              Submitted to Chaos; preprint available as <a href="https://doi.org/10.48550/arXiv.2606.20352">arXiv:2606.20352</a>.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-lcs-backward-ftle.png" alt="Backward FTLE field showing attracting transport structures" />
-            </figure>
-          </article>
-
-          <article class="paper-card" style="order: 20" data-tags="acoustics timeseries turbulence">
-            <div class="paper-tag">Wave-vortex coupling</div>
-            <h3>Local wave-vortex interaction in a reacting supersonic shear layer</h3>
-            <p>
-              Dilatation and vorticity diagnostics quantify local synchronization, lag, band-limited coupling, and
-              convective-frame coactivity between acoustic-compressive and vortical fields. This separates genuine
-              wave-vortex organization from simple spatial overlap, which is important in compressible shear layers where
-              acoustic and hydrodynamic motions coexist.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-wave-vortex-structure.png" alt="Wave-vortex interaction structure maps" />
-            </figure>
-          </article>
-
-          <article class="paper-card" style="order: 12" data-tags="acoustics combustion heat">
-            <div class="paper-tag">Combustion noise</div>
-            <h3>Near-field combustion-noise source dynamics in a reacting supersonic temporal mixing layer</h3>
-            <p>
-              Heat release, compression, geometry, and broadband acoustic signatures are linked to the feedback between
-              reacting turbulence and sound generation. The analysis connects local reaction structure with time-frequency
-              acoustic content, clarifying how broadband noise emerges from distributed, intermittent combustion activity.
-            </p>
-            <p>
-              Submitted to Combust. Theory Model.; preprint available as <a href="https://doi.org/10.48550/arXiv.2606.15626">arXiv:2606.15626</a>.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-noise-cwt-scalogram.png" alt="Continuous wavelet scalogram for combustion-noise activity" />
-            </figure>
-          </article>
-
-          <article class="paper-card accent-card" style="order: 21" data-tags="acoustics timeseries combustion">
-            <div class="paper-tag">Reactive-acoustic packets</div>
-            <h3>Reactive-acoustic wave packet dynamics in a supersonic reacting shear layer</h3>
-            <p>
-              Band-averaged dilatation isolates reactive-acoustic wave packets and quantifies their speeds, persistence,
-              scales, and thermochemical environment. The group-velocity view turns localized compressive activity into
-              measurable packet motion, making it possible to compare transport speed, lifetime, and reaction-zone
-              association across frequency bands.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-rawpt-group-velocity.png" alt="Bandwise group velocity and lifetime map for reactive-acoustic wave packets" />
-            </figure>
-          </article>
-
-          <article class="paper-card" style="order: 22" data-tags="topology numerical turbulence">
-            <div class="paper-tag">Receptivity</div>
-            <h3>Receptivity and biorthogonal decomposition in a reacting temporal mixing layer</h3>
-            <p>
-              Direct and adjoint finite-thickness modes identify where localized forcing couples most strongly to
-              Kelvin-Helmholtz receptivity in a chemically active shear layer. The biorthogonal formulation links spatial
-              forcing, modal response, and shear-layer amplification, so the result identifies sensitive regions rather
-              than only energetic structures.
-            </p>
-            <p>
-              Submitted to Theor. Comput. Fluid Dyn.; preprint available as <a href="https://doi.org/10.48550/arXiv.2606.20819">arXiv:2606.20819</a>.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-receptivity-biorthogonal.png" alt="Biorthogonal decomposition amplitudes and modal response" />
-            </figure>
-          </article>
-
-          <article class="paper-card accent-card" style="order: 23" data-tags="acoustics timeseries combustion transport">
-            <div class="paper-tag">Compression-chemistry coupling</div>
-            <h3>Event-level compression-chemistry coupling in a supersonic reacting temporal mixing layer</h3>
-            <p>
-              Compression masks condition heat release and scalar-gradient activity to quantify overlap, proximity, lag,
-              geometry, and event-scale coupling. The resulting diagnostics show whether compressive events merely pass
-              through reacting regions or whether they preferentially align with chemically and scalar-active structures.
-            </p>
-            <p>
-              Submitted to Combust. Flame; preprint available as <a href="https://doi.org/10.48550/arXiv.2606.15628">arXiv:2606.15628</a>.
-            </p>
-            <figure class="visual-slot image-slot">
-              <img src="assets/research/tml-compression-chemistry-structure.png" alt="Compression and chemistry structure maps" />
-            </figure>
+          <article class="pillar">
+            <span>04</span>
+            <h3>Models and measurements</h3>
+            <p>Simulation-guided experiments, sparse sensing, environmental observations, and uncertainty-aware comparison.</p>
           </article>
         </div>
       </section>
@@ -531,9 +149,9 @@
 
     <footer class="footer">
       <span>Research · Mechanisms Across Scales</span>
-      <span>Thermofluids · ocean mixing · acoustics · filtering · topology · transport.</span>
+      <span>Aerospace flows · geophysical flows · simulation · measurement · transport.</span>
     </footer>
 
-    <script src="script.js?v=20260723-portfolio-balance"></script>
+    <script src="script.js?v=20260818-research-split"></script>
   </body>
 </html>

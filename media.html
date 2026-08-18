@@ -6,18 +6,23 @@
     <title>Visuals | Sriram Kalathoor</title>
     <meta
       name="description"
-      content="Research visuals by Sriram Kalathoor spanning ocean mixing, polar interfaces, environmental transport, turbulence, reacting flows, acoustics, and computational physics."
+      content="Research visuals by Sriram Kalathoor spanning aerospace and geophysical fluid dynamics, reacting flows, propulsion, ocean mixing, polar interfaces, acoustics, and transport."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sriramp28.github.io/media.html" />
     <meta property="og:title" content="Visuals | Sriram Kalathoor" />
-    <meta property="og:description" content="Resolved ocean interfaces, polar heat-gate states, turbulent transport, reacting flows, acoustics, and computational physics." />
+    <meta property="og:description" content="Aerospace and geophysical flow fields, reacting shear layers, stratified interfaces, transport pathways, acoustics, and turbulence." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sriramp28.github.io/media.html" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://sriramp28.github.io/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sriram Kalathoor computational fluid dynamics across aerospace and geophysical systems" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Visuals | Sriram Kalathoor" />
-    <meta name="twitter:description" content="Resolved ocean interfaces, polar heat-gate states, turbulence, reacting flows, and acoustic fields." />
-    <link rel="stylesheet" href="styles.css?v=20260712-earth-systems" />
+    <meta name="twitter:description" content="Aerospace and geophysical flow fields, reacting shear layers, ocean interfaces, turbulence, and acoustic fields." />
+    <meta name="twitter:image" content="https://sriramp28.github.io/assets/social-preview.png" />
+    <link rel="stylesheet" href="styles.css?v=20260818-research-split" />
   </head>
   <body>
     <header class="site-header">
@@ -25,7 +30,16 @@
         <a class="brand" href="index.html">Sriram Kalathoor</a>
         <div class="nav-links">
           <a href="index.html">Overview</a>
-          <a href="research.html">Research</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-trigger">
+              <a class="nav-dropdown-link" href="research.html">Research</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="research-submenu" aria-label="Open research menu"><span aria-hidden="true">⌄</span></button>
+            </div>
+            <div class="nav-dropdown-menu" id="research-submenu">
+              <a href="research-aerospace.html">Aerospace Engineering</a>
+              <a href="research-geophysics.html">Geophysics &amp; Oceanography</a>
+            </div>
+          </div>
           <a aria-current="page" href="media.html">Visuals</a>
           <a href="teaching.html">Teaching</a>
           <a href="about.html">About Me</a>
@@ -40,8 +54,9 @@
         <p class="eyebrow">Visuals and movies</p>
         <h1>Fields, Interfaces, Pathways.</h1>
         <p>
-          Resolved fields and data-derived views reveal structure that scalar summaries conceal: finite interfaces,
-          coherent transport, sparse sampling, localized heat release, acoustic-compressive activity, and mixing geometry.
+          Resolved fields and data-derived views reveal structure that scalar summaries conceal. Across aerospace and
+          geophysical systems, the images show finite interfaces, coherent transport, sparse sampling, localized heat
+          release, acoustic activity, instability, and mixing geometry.
         </p>
       </section>
 
@@ -219,9 +234,9 @@
 
     <footer class="footer">
       <span>Visuals · Simulation Media</span>
-      <span>Combustion · acoustics · shocks · separation · reacting-flow structure.</span>
+      <span>Aerospace flows · geophysical flows · acoustics · transport pathways.</span>
     </footer>
 
-    <script src="script.js?v=20260712-earth-systems"></script>
+    <script src="script.js?v=20260818-research-split"></script>
   </body>
 </html>

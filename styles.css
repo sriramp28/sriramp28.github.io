@@ -100,6 +100,107 @@ main,
   color: var(--ink);
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  align-items: center;
+  display: flex;
+}
+
+.nav-dropdown-toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--ink-soft);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: 3px;
+  min-height: 30px;
+  min-width: 24px;
+  padding: 0;
+}
+
+.nav-dropdown-toggle span {
+  display: inline-block;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: transform 160ms ease;
+}
+
+.nav-dropdown-menu {
+  background: var(--panel-strong);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  box-shadow: 0 16px 34px rgba(10, 31, 39, 0.17);
+  display: grid;
+  gap: 2px;
+  left: -14px;
+  min-width: 248px;
+  opacity: 0;
+  padding: 8px;
+  pointer-events: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  transform: translateY(-5px);
+  transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+  visibility: hidden;
+  z-index: 30;
+}
+
+.nav-links .nav-dropdown-menu a {
+  border: 0;
+  border-radius: 4px;
+  color: var(--ink);
+  line-height: 1.3;
+  padding: 10px 12px;
+}
+
+.nav-links .nav-dropdown-menu a:hover,
+.nav-links .nav-dropdown-menu a:focus-visible {
+  background: var(--paper-deep);
+  color: var(--deep);
+  outline: none;
+}
+
+.nav-links .nav-dropdown-menu a[aria-current="page"] {
+  background: rgba(8, 123, 120, 0.1);
+  color: var(--teal);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.nav-dropdown.force-closed .nav-dropdown-menu {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-5px);
+  visibility: hidden;
+}
+
+.nav-dropdown.open .nav-dropdown-toggle span,
+.nav-dropdown:hover .nav-dropdown-toggle span,
+.nav-dropdown:focus-within .nav-dropdown-toggle span {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown.force-closed .nav-dropdown-toggle span {
+  transform: rotate(0);
+}
+
+.nav-dropdown.current-section .nav-dropdown-link {
+  border-color: var(--teal);
+  color: var(--ink);
+}
+
 .hero {
   display: grid;
   gap: 38px;
@@ -811,6 +912,16 @@ h1 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.media-grid > :nth-child(1) { order: 1; }
+.media-grid > :nth-child(5) { order: 2; }
+.media-grid > :nth-child(2) { order: 3; }
+.media-grid > :nth-child(6) { order: 4; }
+.media-grid > :nth-child(3) { order: 5; }
+.media-grid > :nth-child(7) { order: 6; }
+.media-grid > :nth-child(4) { order: 7; }
+.media-grid > :nth-child(8) { order: 8; }
+.media-grid > :nth-child(n + 9) { order: 9; }
+
 .media-card {
   background: var(--panel-strong);
   border: 1px solid var(--line);
@@ -1287,7 +1398,7 @@ address {
   transform: translateY(0);
 }
 
-/* Earth-system portfolio home */
+/* Dual-domain portfolio home */
 .home-main {
   margin: 0;
   max-width: none;
@@ -1301,11 +1412,9 @@ address {
   width: min(1180px, calc(100% - 40px));
 }
 
-.earth-hero {
+.balanced-hero {
   align-items: center;
-  background-image: url("assets/research/earth-system/salt-finger-interface-hero.jpg");
-  background-position: center 52%;
-  background-size: cover;
+  background: #071820;
   color: #f7fbfa;
   display: flex;
   min-height: min(780px, 78svh);
@@ -1314,11 +1423,28 @@ address {
   position: relative;
 }
 
-.earth-hero::before {
-  background: rgba(2, 11, 18, 0.58);
+.balanced-hero::before,
+.balanced-hero::after {
+  background-position: center;
+  background-size: cover;
   content: "";
-  inset: 0;
+  inset-block: 0;
   position: absolute;
+  width: 50%;
+}
+
+.balanced-hero::before {
+  background-image:
+    linear-gradient(rgba(2, 11, 18, 0.64), rgba(2, 11, 18, 0.72)),
+    url("assets/research/tml-flow-thermochemical-interfaces.png");
+  left: 0;
+}
+
+.balanced-hero::after {
+  background-image:
+    linear-gradient(rgba(2, 11, 18, 0.56), rgba(2, 11, 18, 0.68)),
+    url("assets/research/earth-system/salt-finger-interface-hero.jpg");
+  right: 0;
 }
 
 .earth-hero-copy {
@@ -1327,11 +1453,11 @@ address {
   z-index: 1;
 }
 
-.earth-hero .eyebrow {
+.balanced-hero .eyebrow {
   color: #f3cf6b;
 }
 
-.earth-hero h1 {
+.balanced-hero h1 {
   font-size: clamp(3.4rem, 7vw, 6.8rem);
   max-width: none;
 }
@@ -1431,6 +1557,26 @@ address {
   width: 100%;
 }
 
+.story-visual-pair {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.story-visual-pair img:first-child {
+  object-position: center;
+}
+
+.story-visual-pair img:last-child {
+  object-position: center 52%;
+}
+
+.domain-text-links {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
 .story-band .eyebrow {
   color: #f3cf6b;
 }
@@ -1482,7 +1628,7 @@ address {
   color: var(--ink-soft);
 }
 
-/* Earth-system research program */
+/* Research programs */
 .research-domain-nav {
   border-bottom: 1px solid var(--line-strong);
   border-top: 1px solid var(--line-strong);
@@ -1501,6 +1647,11 @@ address {
 .research-domain-nav a + a {
   border-left: 1px solid var(--line-strong);
   padding-left: 30px;
+}
+
+.research-programs {
+  display: flex;
+  flex-direction: column;
 }
 
 .research-domain-nav > a > span {
@@ -1529,6 +1680,97 @@ address {
 
 .research-domain-nav a:hover strong {
   color: var(--teal);
+}
+
+.research-domain-nav a[aria-current="page"] {
+  background: rgba(8, 123, 120, 0.055);
+}
+
+.research-domain-nav a[aria-current="page"] strong {
+  color: var(--teal);
+}
+
+.research-overview-section {
+  padding-bottom: 30px;
+}
+
+.domain-preview-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 42px;
+}
+
+.domain-preview-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.domain-preview-card > img {
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.domain-preview-card > div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.domain-preview-card h2 {
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+}
+
+.domain-preview-card p:not(.eyebrow) {
+  color: var(--ink-soft);
+  margin: 18px 0 26px;
+}
+
+.domain-preview-card .button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.shared-methods-section {
+  border-top: 1px solid var(--line-strong);
+  padding-top: 52px;
+}
+
+.cross-domain-callout {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(8, 123, 120, 0.08), rgba(177, 79, 63, 0.08));
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  display: flex;
+  gap: 36px;
+  justify-content: space-between;
+  margin: 24px 0 54px;
+  padding: 30px;
+}
+
+.cross-domain-callout h2 {
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+}
+
+.cross-domain-callout p:not(.eyebrow) {
+  color: var(--ink-soft);
+  margin: 12px 0 0;
+  max-width: 720px;
+}
+
+.cross-domain-callout .eyebrow {
+  margin-bottom: 10px;
+}
+
+.cross-domain-callout .button {
+  flex: 0 0 auto;
 }
 
 .program-grid {
@@ -1694,14 +1936,23 @@ address {
     overflow-wrap: anywhere;
   }
 
-  .earth-hero .hero-actions {
+  .nav-dropdown-trigger {
+    justify-content: flex-start;
+  }
+
+  .nav-dropdown-menu {
+    left: 0;
+    min-width: min(280px, calc(100vw - 28px));
+  }
+
+  .balanced-hero .hero-actions {
     display: grid;
     gap: 8px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
   }
 
-  .earth-hero .button {
+  .balanced-hero .button {
     justify-content: center;
     font-size: 0.82rem;
     min-width: 0;
@@ -1711,11 +1962,14 @@ address {
     width: 100%;
   }
 
-  .earth-hero .button:last-child {
+  .balanced-hero .button:first-child {
     grid-column: 1 / -1;
-    justify-self: start;
-    min-width: 104px;
-    width: auto;
+  }
+
+  .balanced-hero .button:last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
   }
 
   .hero,
@@ -1737,6 +1991,15 @@ address {
 
   .research-pillars {
     grid-template-columns: 1fr;
+  }
+
+  .domain-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cross-domain-callout {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .research-domain-nav {
@@ -1781,16 +2044,30 @@ address {
     height: 260px;
   }
 
-  .earth-hero {
+  .balanced-hero {
     align-items: flex-end;
-    background-position: 42% center;
     max-width: 100vw;
     min-height: 0;
     padding: 32px 20px;
     width: 100vw;
   }
 
-  .earth-hero h1 {
+  .balanced-hero::before,
+  .balanced-hero::after {
+    height: 50%;
+    inset-inline: 0;
+    width: 100%;
+  }
+
+  .balanced-hero::before {
+    inset-block: 0 auto;
+  }
+
+  .balanced-hero::after {
+    inset-block: auto 0;
+  }
+
+  .balanced-hero h1 {
     font-size: clamp(2.7rem, 12vw, 3.6rem);
   }
 
@@ -1800,7 +2077,7 @@ address {
     width: 100%;
   }
 
-  .earth-hero .eyebrow {
+  .balanced-hero .eyebrow {
     font-size: 0.68rem;
     margin-bottom: 12px;
   }
@@ -1815,7 +2092,7 @@ address {
     margin-top: 14px;
   }
 
-  .earth-hero .hero-actions {
+  .balanced-hero .hero-actions {
     margin-top: 20px;
   }
 
@@ -1826,6 +2103,10 @@ address {
 
   .story-band img {
     min-height: 260px;
+  }
+
+  .story-visual-pair {
+    grid-template-columns: 1fr;
   }
 
   .trajectory-links a {

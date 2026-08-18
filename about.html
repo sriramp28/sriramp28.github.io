@@ -6,18 +6,23 @@
     <title>About | Sriram Kalathoor</title>
     <meta
       name="description"
-      content="About Sriram Kalathoor: computational geophysical fluid dynamicist studying environmental transport across oceanic, atmospheric, and engineered fluid systems."
+      content="About Sriram Kalathoor, a computational fluid dynamicist studying transport across aerospace, oceanic, polar, and engineered systems."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sriramp28.github.io/about.html" />
     <meta property="og:title" content="About Sriram Kalathoor" />
-    <meta property="og:description" content="Computational geophysical fluid dynamics, environmental transport, ocean mixing, turbulence, reacting flows, and scientific education." />
+    <meta property="og:description" content="Computational fluid dynamics across aerospace and geophysical systems, with research in transport, turbulence, reaction, and observation." />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://sriramp28.github.io/about.html" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://sriramp28.github.io/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sriram Kalathoor computational fluid dynamics across aerospace and geophysical systems" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About Sriram Kalathoor" />
-    <meta name="twitter:description" content="Computational geophysical fluid dynamicist, environmental transport researcher, numerical modeler, instructor, and mentor." />
-    <link rel="stylesheet" href="styles.css?v=20260712-earth-systems" />
+    <meta name="twitter:description" content="Computational fluid dynamicist working across aerospace and geophysical systems, numerical modeling, teaching, and mentorship." />
+    <meta name="twitter:image" content="https://sriramp28.github.io/assets/social-preview.png" />
+    <link rel="stylesheet" href="styles.css?v=20260818-research-split" />
   </head>
   <body>
     <header class="site-header">
@@ -25,7 +30,16 @@
         <a class="brand" href="index.html">Sriram Kalathoor</a>
         <div class="nav-links">
           <a href="index.html">Overview</a>
-          <a href="research.html">Research</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-trigger">
+              <a class="nav-dropdown-link" href="research.html">Research</a>
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="research-submenu" aria-label="Open research menu"><span aria-hidden="true">⌄</span></button>
+            </div>
+            <div class="nav-dropdown-menu" id="research-submenu">
+              <a href="research-aerospace.html">Aerospace Engineering</a>
+              <a href="research-geophysics.html">Geophysics &amp; Oceanography</a>
+            </div>
+          </div>
           <a href="media.html">Visuals</a>
           <a href="teaching.html">Teaching</a>
           <a aria-current="page" href="about.html">About Me</a>
@@ -38,24 +52,28 @@
     <main>
       <section class="page-hero">
         <p class="eyebrow">About</p>
-        <h1>Aerospace Foundations, Earth-System Questions.</h1>
+        <h1>Fluid Dynamics Across Natural and Engineered Systems.</h1>
         <p>
-          I am a computational geophysical fluid dynamicist and educator studying how interfaces, stratification, and
-          turbulence govern the movement of heat and matter through the environment. My current work combines
-          high-resolution ocean simulation with hydrographic observations to examine double-diffusive mixing, polar
-          heat pathways, finite-depth transport, and what sparse measurements can reveal about evolving fluid structure.
+          I am a computational fluid dynamicist and educator studying how interfaces, coherent structures, and
+          instabilities organize the movement of heat, momentum, chemical species, and salt. My research spans
+          high-speed reacting flows, propulsion, acoustics, stratified oceans, double-diffusive mixing, and sparse observation.
         </p>
         <p>
-          I build numerical models, run large simulations, develop analysis algorithms, and connect dense computed
-          fields to physical arguments and observable quantities. The common question across this work is how
-          multiscale transport can be represented faithfully enough to explain a natural system, test a model, or guide
-          an observing strategy.
+          These application areas are different in scale and purpose, but neither is secondary to the other. A reacting
+          shear layer and a thermohaline interface both ask how localized structures control exchange, which mechanisms
+          survive reduced resolution, and what a practical measurement can recover from a complex three-dimensional flow.
         </p>
         <p>
-          My training in aerospace and mechanical engineering provides the methodological foundation for that program.
-          Earlier research on propulsion, reacting shear layers, acoustics, thermal loading, and coupled CFD/FEA taught
-          me to work across governing equations, numerical scales, and practical constraints. Those same habits now
-          support questions in ocean, polar, atmospheric, riverine, and other environmental flows.
+          I build numerical models, run large simulations, develop analysis algorithms, and connect dense computed fields
+          to physical arguments and observable quantities. Direct and large-eddy simulation, conservation budgets,
+          coherent-structure analysis, reduced models, uncertainty, and sparse sensing provide a common computational
+          language across aerospace and geophysical fluid dynamics.
+        </p>
+        <p>
+          I completed the requirements for the Ph.D. in Aerospace Engineering at Georgia Tech and successfully defended
+          my dissertation on August 14, 2026. My training also includes graduate degrees in mathematics, mechanical
+          engineering, and aerospace engineering, along with research experience in high-performance computation,
+          combustion, thermal-fluid systems, and environmental transport.
         </p>
         <p>
           I also teach aerodynamics, computational fluid dynamics, fluid mechanics, and computing with the same emphasis
@@ -64,54 +82,57 @@
           the physical consequence of a model.
         </p>
         <p>
-          I am especially interested in research and teaching opportunities in geophysical fluid dynamics, Earth-system
-          science, ocean and atmospheric dynamics, environmental transport, and computational science, including work
-          that connects first-principles models with field observations.
+          I am interested in research and teaching environments where careful computation can clarify difficult fluid
+          problems, whether the setting is an aircraft engine, a high-speed shear layer, an ocean interface, or an
+          environmental transport system.
         </p>
       </section>
 
       <section class="section split-section">
         <article class="callout">
           <p class="eyebrow">Research direction</p>
-          <h2>Transport across environmental interfaces.</h2>
+          <h2>Two domains, one physical thread.</h2>
           <p>
-            My work combines governing-equation models, high-performance computation, environmental observations, and
-            scale-aware analysis. I study how fluid interfaces select transport pathways, how boundary geometry and
-            background flow alter those pathways, and which signatures survive realistic sampling. This creates a
-            direct bridge between process-resolving simulation and the measurements used to understand the ocean and
-            the broader Earth system.
+            My work combines governing-equation models, high-performance computation, mathematical diagnostics, and
+            observations. I study how flow structures select transport pathways, how geometry and operating conditions
+            alter those pathways, and which signatures survive reduced models or realistic sampling. The same framework
+            supports design and diagnosis in aerospace systems as well as process understanding in oceans and the environment.
           </p>
         </article>
         <div class="capability-list">
+          <span>Computational fluid dynamics</span>
+          <span>Aerospace fluid dynamics</span>
           <span>Geophysical fluid dynamics</span>
-          <span>Environmental transport</span>
-          <span>Ocean and polar dynamics</span>
-          <span>Ocean mixing</span>
-          <span>Double-diffusive convection</span>
-          <span>Stratified flows</span>
-          <span>Hydrographic observations</span>
-          <span>Observation-simulation comparison</span>
+          <span>Reacting and compressible flows</span>
+          <span>Stratified and double-diffusive flows</span>
+          <span>Propulsion systems</span>
+          <span>Ocean and polar transport</span>
+          <span>Turbulence</span>
           <span>Thermofluids</span>
           <span>Heat transfer</span>
           <span>Transport phenomena</span>
           <span>Acoustics</span>
-          <span>Room acoustics</span>
           <span>Wave propagation</span>
           <span>Combustion</span>
+          <span>Environmental transport</span>
+          <span>Hydrographic observations</span>
+          <span>Observation-simulation comparison</span>
+          <span>Direct and large-eddy simulation</span>
+          <span>Coherent-structure analysis</span>
+          <span>Sparse sensing and observability</span>
           <span>Mesh-based simulation</span>
           <span>Finite-element analysis</span>
+          <span>Fluid-structure interaction</span>
+          <span>Thermo-structural interaction</span>
+          <span>Design optimization</span>
+          <span>Manufacturing-aware analysis</span>
           <span>ANSYS</span>
           <span>COMSOL</span>
           <span>SolidWorks</span>
           <span>PTC Creo</span>
           <span>AutoCAD</span>
-          <span>Design optimization</span>
-          <span>Manufacturing-aware analysis</span>
           <span>Machining and fabrication</span>
           <span>Stress and vibration</span>
-          <span>Thermo-structural interaction</span>
-          <span>Fluid-structure interaction</span>
-          <span>Mechanical design analysis</span>
           <span>HPC</span>
           <span>Scientific Python</span>
           <span>Numerical methods</span>
@@ -126,11 +147,10 @@
           <p class="eyebrow">Scientific range</p>
           <h2>Natural and engineered fluid systems.</h2>
           <p>
-            The physical thread through my work is transport across structured, unstable, or reacting interfaces. It
-            connects salt-finger layers and polar thermohaline structure to turbulent shear layers, combustors,
-            aeroacoustics, and thermal-fluid design. I am building from this foundation toward a broader program in
-            ocean, atmospheric, riverine, and lacustrine dynamics, where process-resolving computation and field data can
-            be used together to understand environmental change.
+            The physical thread through my work is transport across structured, unstable, stratified, or reacting
+            interfaces. It connects turbulent shear layers, combustors, aeroacoustics, and thermal-fluid design with
+            salt-finger layers, polar thermohaline structure, and environmental exchange. Each domain offers distinct
+            questions and an opportunity to test which computational ideas remain broadly useful.
           </p>
         </article>
 
@@ -160,9 +180,9 @@
 
     <footer class="footer">
       <span>About Me · Sriram Kalathoor</span>
-      <span>Geophysical fluid dynamics · environmental transport · simulation · observations · teaching.</span>
+      <span>Aerospace and geophysical fluid dynamics · transport · simulation · teaching.</span>
     </footer>
 
-    <script src="script.js?v=20260712-earth-systems"></script>
+    <script src="script.js?v=20260818-research-split"></script>
   </body>
 </html>
